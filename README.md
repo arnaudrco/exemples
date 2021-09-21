@@ -1,5 +1,5 @@
 # exemples
-![affiche](https://github.com/arnaudrco/exemples/affiche.PNG)
+![affiche](https://github.com/arnaudrco/exemples/blob/main/affiche.PNG)
 
 Voulez vous comprendre le fonctionnement des appareils électroniques qui nous entourent ? Vous initiez aux logiciels libres ? Ou simplement réaliser un montage à emporter chez vous ?
 Vous pouvez être accompagnés pour réaliser un montage pour économiser l’énergie,  pour recycler des anciens jouets,  ou jouer avec des composants : des cellules photovoltaïques pour réaliser un tracker solaire , un détecteur de CO2 pour mesurer la pollution, un colorimètre pour faire un caméléon , un capteur de pression-température-humidité  pour une station météo, un détecteur à ultra-son pour une harpe musicale, ou une installation de domotique, des objets connectés, un robot, un arrosage pour un jardin partagé …
