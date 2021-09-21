@@ -14,4 +14,5 @@ niveau 3 :  clique et connecte toi sur une connexion WIFI pour communiquer avec 
 niveau 4 : les robots ; interagir avec un environnement
 
 niveau 5 : système ; éco-système, intelligence artificelle , serveur, domotique ; le Raspberry pi est interdit importation en Australie mais c'est un outil très puissant! 
+
 ![affiche](https://github.com/arnaudrco/exemples/blob/main/affiche.PNG)
