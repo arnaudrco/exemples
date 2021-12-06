@@ -1,8 +1,6 @@
 # exemples
 
-Ateliers numériques [Repair Café d'Orsay](https://www.repaircafe-orsay.org/category/blog/ateliers-numeriques-blog/)
-
-[wiki](https://github.com/anumby-source/jouets/wiki)
+[Wiki](https://github.com/anumby-source/jouets/wiki) du [Repair Café d'Orsay](https://www.repaircafe-orsay.org/category/blog/ateliers-numeriques-blog/)
 
 Voulez vous comprendre le fonctionnement des appareils électroniques qui nous entourent ? Vous initiez aux logiciels libres ? Ou simplement réaliser un montage à emporter chez vous ?
 Vous pouvez être accompagnés pour réaliser un montage pour économiser l’énergie,  pour recycler des anciens jouets,  ou jouer avec des composants : des cellules photovoltaïques pour réaliser un tracker solaire , un détecteur de CO2 pour mesurer la pollution, un colorimètre pour faire un caméléon , un capteur de pression-température-humidité  pour une station météo, un détecteur à ultra-son pour une harpe musicale, ou une installation de domotique, des objets connectés, un robot, un arrosage pour un jardin partagé …
