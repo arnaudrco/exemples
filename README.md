@@ -19,3 +19,11 @@ niveau 4 : les robots ; interagir avec un environnement
 niveau 5 : système ; éco-système, intelligence artificelle , serveur, domotique ; le Raspberry pi est interdit d'importation en Australie mais c'est un outil très puissant! 
 
 ![affiche](https://github.com/arnaudrco/exemples/blob/main/affiche.PNG)
+
+Derniers projets
+
+https://github.com/arnaudrco/exemples/blob/main/cameleon/read-me-cameleon.pdf
+
+https://github.com/anumby-source/jouets/tree/main/voiture-eclairee
+
+https://github.com/anumby-source/jouets/blob/main/affichage-a-distance/read-me-affichage.pdf
