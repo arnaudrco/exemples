@@ -22,6 +22,8 @@ niveau 5 : système ; éco-système, intelligence artificelle , serveur, domotiq
 
 Derniers projets
 
+[Une manette de jeux pour jouer avec la souris](https://github.com/arnaudrco/exemples/tree/main/manette-de-jeux-pro)
+
 https://github.com/arnaudrco/exemples/blob/main/cameleon/read-me-cameleon.pdf
 
 https://github.com/anumby-source/jouets/tree/main/voiture-eclairee
