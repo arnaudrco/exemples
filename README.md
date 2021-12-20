@@ -14,6 +14,9 @@ Archives
 
 [Une manette de jeux pour jouer avec la souris sous arduino](https://github.com/arnaudrco/exemples/blob/main/manette-de-jeux-pro/read-me-manette.pdf)
 
+[Une guirlande de Noel sous arduino](https://github.com/arnaudrco/exemples/blob/main/guirlande/read-me-guirlande.pdf)
+
+
 Voulez vous comprendre le fonctionnement des appareils électroniques qui nous entourent ? Vous initiez aux logiciels libres ? Ou simplement réaliser un montage à emporter chez vous ?
 Vous pouvez être accompagnés pour réaliser un montage pour économiser l’énergie,  pour recycler des anciens jouets,  ou jouer avec des composants : des cellules photovoltaïques pour réaliser un tracker solaire , un détecteur de CO2 pour mesurer la pollution, un colorimètre pour faire un caméléon , un capteur de pression-température-humidité  pour une station météo, un détecteur à ultra-son pour une harpe musicale, ou une installation de domotique, des objets connectés, un robot, un arrosage pour un jardin partagé …
 Nous proposons des ateliers numériques gratuits sous forme d’une boîte à outils pour monter des petits projets à partir de composants économiques, sans développer de code, avec l’environnement de développement « arduino » ou un simple paramétrage. En associant des bibliothèques toutes faites de composants, nous pouvons ainsi tester de multiples capteurs ou réaliser des projets ensemble
