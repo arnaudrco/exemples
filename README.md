@@ -12,6 +12,8 @@ https://github.com/anumby-source/jouets/blob/main/affichage-a-distance/read-me-a
 
 Archives
 
+[mesurer un courant sur place ou à distance](https://github.com/arnaudrco/exemples/blob/main/read-me-boucle-de-courant.pdf)
+
 [un dé pour donner la direction et l'accélération](https://github.com/arnaudrco/exemples/blob/main/de-accelerometre/de-accelerom%C3%A8tre.mp4)
 
 [Une manette de jeux pour jouer avec la souris sous arduino](https://github.com/arnaudrco/exemples/blob/main/manette-de-jeux-pro/read-me-manette.pdf)
