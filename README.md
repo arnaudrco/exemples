@@ -4,11 +4,11 @@
 
 Derniers projets
 
-https://github.com/arnaudrco/exemples/blob/main/cameleon/read-me-cameleon.pdf
+[un caméleon avec 3 méthodes de colorimétrie](https://github.com/arnaudrco/exemples/blob/main/cameleon/read-me-cameleon.pdf)
 
-https://github.com/anumby-source/jouets/tree/main/voiture-eclairee
+[une voiture pour suivre une ligne blanche](https://github.com/anumby-source/jouets/tree/main/voiture-eclairee)
 
-https://github.com/anumby-source/jouets/blob/main/affichage-a-distance/read-me-affichage.pdf
+[réaliser un afficheur à distance avec un vieil écran VGA](https://github.com/anumby-source/jouets/blob/main/affichage-a-distance/read-me-affichage.pdf)
 
 Archives
 
