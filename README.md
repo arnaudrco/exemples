@@ -6,7 +6,7 @@ Derniers projets
 
 [un caméleon avec 3 méthodes de colorimétrie](https://github.com/arnaudrco/exemples/blob/main/cameleon/read-me-cameleon.pdf)
 
-[une voiture pour suivre une ligne blanche](https://github.com/anumby-source/jouets/tree/main/voiture-eclairee)
+[une voiture pour suivre une ligne blanche](https://github.com/anumby-source/jouets/blob/main/voiture-eclairee/read-me-voiture-eclairee.pdf)
 
 [réaliser un afficheur à distance avec un vieil écran VGA](https://github.com/anumby-source/jouets/blob/main/affichage-a-distance/read-me-affichage.pdf)
 
