@@ -4,7 +4,7 @@
 
 Derniers projets
 
-[Des lutins pour programmer des jeux sur esp32](https://github.com/arnaudrco/exemples/tree/main/esp-Sprites)
+[Des lutins pour programmer des jeux sur esp32](https://github.com/arnaudrco/exemples/blob/main/esp-Sprites/read-me-sprites.pdf)
 
 [un caméleon avec 3 méthodes de colorimétrie](https://github.com/arnaudrco/exemples/blob/main/cameleon/read-me-cameleon.pdf)
 
