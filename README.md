@@ -4,6 +4,10 @@
 
 Derniers projets
 
+[Montages en python CROUS](https://github.com/arnaudrco/CROUS-micro-python)
+
+[Montages sur esp32-C3](https://github.com/arnaudrco/CROUS-micro-python/blob/main/read-me-esp-C3.pdf)
+
 [Des lutins pour programmer des jeux sur esp32](https://github.com/arnaudrco/exemples/blob/main/esp-Sprites/read-me-sprites.pdf)
 
 [un caméleon avec 3 méthodes de colorimétrie](https://github.com/arnaudrco/exemples/blob/main/cameleon/read-me-cameleon.pdf)
