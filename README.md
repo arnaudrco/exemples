@@ -51,6 +51,5 @@ niveau 5 : système ; éco-système, intelligence artificelle , serveur, domotiq
 
 https://user-images.githubusercontent.com/90700891/156402292-697312b3-5815-46db-a0f9-fc1f832c97cc.mp4
 
-
-
+La progression par niveaux des [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) est importante pour aborder des projets de plus en plus ambitieux. Compléter votre boite à outils avec des [Capteurs](https://github.com/arnaudrco/exemples/wiki/Capteurs), des [Afficheurs](https://github.com/arnaudrco/exemples/wiki/Les-afficheurs) en utilisant des [Instruments de mesure](https://github.com/arnaudrco/exemples/wiki/G%C3%A9n%C3%A9rateurs-et-mesures). Regarder les [Videos](https://github.com/arnaudrco/visio/wiki/Video) et montez vos propres projets pour construire des [jouets](https://github.com/anumby-source/jouets/wiki), refaire les jeux du festival [festisol](https://github.com/arnaudrco/festisol/wiki) et commencer à utiliser les nouveaux [raspberry-pico](https://github.com/anumby-source/raspberry-pico/wiki). Voulez-vous nous aider à développer d'autres applications ? Commencez un peu de code [CROUS-micro-python](https://github.com/arnaudrco/CROUS-micro-python/wiki), participez au [developpement-voiture](https://github.com/anumby-source/developpement-voiture/wiki) Anumby
 
