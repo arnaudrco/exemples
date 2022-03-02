@@ -5,7 +5,6 @@ anumby : [developpement-voiture](https://github.com/anumby-source/developpement-
 
 https://user-images.githubusercontent.com/90700891/155982247-c48908b8-f418-4d2f-b628-dde117e834fd.mp4
 
-![servo](https://user-images.githubusercontent.com/90700891/156402292-697312b3-5815-46db-a0f9-fc1f832c97cc.mp4)
 
 Derniers projets
 
@@ -49,6 +48,8 @@ niveau 4 : les robots ; interagir avec un environnement
 niveau 5 : système ; éco-système, intelligence artificelle , serveur, domotique ; le Raspberry pi est interdit d'importation en Australie mais c'est un outil très puissant! 
 
 ![affiche](https://github.com/arnaudrco/exemples/blob/main/affiche.png)
+
+https://user-images.githubusercontent.com/90700891/156402292-697312b3-5815-46db-a0f9-fc1f832c97cc.mp4
 
 
 
