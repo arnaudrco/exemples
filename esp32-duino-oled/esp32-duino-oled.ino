@@ -11,19 +11,41 @@
 
   If you don't know where to start, visit official website and navigate to
   the Getting Started page. Have fun mining!
+
+ arnaudrco https://github.com/arnaudrco/exemples/wiki/Derniers-projets
+ ajout d'un afficheur OLED pour hasrate et share
+ utilise la librairie ArduinoJSON >> à ajouter dans outils/gérer les bibliothèques
+ SSD1306
+  
 */
 
 /***************** START OF MINER CONFIGURATION SECTION *****************/
+
+
+
+
 // Change the part in brackets to your WiFi name
-const char *SSID = "xxxx";
+const char *SSID = "NUMERICABLE-63";
 // Change the part in brackets to your WiFi password
-const char *WIFI_PASS = "xxxx";
+const char *WIFI_PASS = "";
 // Change the part in brackets to your Duino-Coin username
 const char *DUCO_USER = "nano";
 // Change the part in brackets if you want to set a custom miner name (use Auto to autogenerate)
 const char *RIG_IDENTIFIER = "Auto";
 // Change this if your board has built-in led on non-standard pin
+
+#include "SSD1306Wire.h" // legacy include: `#include "SSD1306.h"`
+// SSD1306Wire display(0x3c, 5, 4);//initialisation écran
+
 #define LED_BUILTIN 2
+
+// OLED 
+#define PIN_GND 32
+#define PIN_PLUS 33
+#define SCL   25
+#define SDA   26
+
+SSD1306Wire display(0x3c, SDA, SCL);//initialisation écran
 
 #define BLINK_SHARE_FOUND    1
 #define BLINK_SETUP_COMPLETE 2
@@ -290,7 +312,55 @@ WebServer server(80);
 WiFiClient wifiMqttClient;
 PubSubClient mqttClient(wifiMqttClient);
 
-// Util Functions
+//-------------------------------- OLED------------------------------
+
+//initialise le buffer
+void initDisplay(void) {
+
+  
+ // Initialise the buffer
+ display.setLogBuffer(5, 30);
+ display.drawLogBuffer(64, 20);
+ display.setFont(ArialMT_Plain_16);
+ display.display();
+ delay(500);
+}
+// initialise le buffer avec les parametres choisis
+//parametre: String text, int x, int y, int size
+//renvoie: rien
+void printBuffer(String text, int x, int y, int size){
+ switch (size) {
+ case 10:
+ display.setFont(ArialMT_Plain_10);
+ break;
+ case 16:
+ display.setFont(ArialMT_Plain_16);
+ break;
+ case 24:
+ display.setFont(ArialMT_Plain_24);
+ break;
+ }
+ display.drawString(x, y, text);
+}
+void init_oled(){
+
+  
+  pinMode(PIN_PLUS, OUTPUT);      // sets the digital pin as output
+  pinMode(PIN_GND, OUTPUT); 
+  digitalWrite(PIN_PLUS, HIGH);
+  digitalWrite(PIN_GND, LOW);
+  
+   display.init();
+ display.flipScreenVertically();
+ display.setContrast(255);
+ initDisplay();
+ initDisplay();
+ display.clear();
+ printBuffer("STARTING",0, 10, 16);
+ display.display();
+}
+
+// ---------------------------Util Functions
 void blink(uint8_t count, uint8_t pin = LED_BUILTIN) {
   uint8_t state = LOW;
 
@@ -492,6 +562,9 @@ void WiFireconnect(void *pvParameters) {
       WiFi.disconnect();
 
       Serial.println(F("Scanning for WiFi networks"));
+       printBuffer("Scanning for WiFi",0, 30, 12); display.display();
+
+       
       n = WiFi.scanNetworks(false, true);
 
       if (n == 0) {
@@ -512,6 +585,10 @@ void WiFireconnect(void *pvParameters) {
           Serial.print(F(")"));
           Serial.println((WiFi.encryptionType(i) == WIFI_AUTH_OPEN) ? " "
                          : "*");
+
+          
+         printBuffer(String( WiFi.SSID(i) ),0, 50, 10); display.display();
+         
           delay(10);
         }
       }
@@ -724,7 +801,18 @@ void TaskMining(void *pvParameters) {
             esp_restart();
           }
           else {
-            // Print statistics
+            
+// ---------------Print statistics ----------------
+                    display.clear();
+                    printBuffer(DUCO_USER,0, 0, 12);
+                    display.display();
+                   printBuffer(String(taskCoreName + "#"+ TaskThreadData[taskId].shares),0, 30, 12);
+                    printBuffer(String(taskCoreName + "H:" + TaskThreadData[taskId].hashrate / 1000 + "kH/s"),0, 50, 10);
+//                      printBuffer(String(" hashrate: " + (TaskThreadData[taskId].hashrate / 1000) + "kH/s, share #" + TaskThreadData[taskId].shares),0, 30, 10);
+                    display.display();
+
+
+            
             Serial.println(String(taskCoreName + " retrieved job feedback: " + feedback + ", hashrate: " + (TaskThreadData[taskId].hashrate / 1000) + "kH/s, share #" + TaskThreadData[taskId].shares));
           }
 
@@ -743,7 +831,9 @@ void TaskMining(void *pvParameters) {
 void setup() {
   Serial.begin(500000);  // Start serial connection
   Serial.println("\n\nDuino-Coin " + String(MINER_BANNER));
-
+  
+  init_oled();
+  
   WiFi.mode(WIFI_STA);  // Setup ESP in client mode
   btStop();
   WiFi.begin(SSID, WIFI_PASS);  // Connect to wifi
