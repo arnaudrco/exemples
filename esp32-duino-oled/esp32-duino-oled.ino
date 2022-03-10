@@ -15,7 +15,7 @@
  arnaudrco https://github.com/arnaudrco/exemples/wiki/Derniers-projets
  ajout d'un afficheur OLED pour hasrate et share
  utilise la librairie ArduinoJSON >> à ajouter dans outils/gérer les bibliothèques
- SSD1306
+ utilise la librairie SSD1306 >> à ajouter dans Croquis/inclure une bibliothèque/zippée contenue dans le répertoire SSD1306.zip
   
 */
 
@@ -33,6 +33,8 @@ const char *DUCO_USER = "nano";
 // Change the part in brackets if you want to set a custom miner name (use Auto to autogenerate)
 const char *RIG_IDENTIFIER = "Auto";
 // Change this if your board has built-in led on non-standard pin
+
+//#include <SSD1306.h>
 
 #include "SSD1306Wire.h" // legacy include: `#include "SSD1306.h"`
 // SSD1306Wire display(0x3c, 5, 4);//initialisation écran
