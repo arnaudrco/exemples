@@ -21,7 +21,9 @@ Derniers projets
 
 [une voiture pour suivre une ligne blanche](https://github.com/anumby-source/jouets/blob/main/voiture-eclairee/read-me-voiture-eclairee.pdf)
 
-[réaliser un afficheur à distance avec un vieil écran VGA](https://github.com/anumby-source/jouets/blob/main/affichage-a-distance/read-me-aLa progression par niveaux des [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) est importante pour aborder des projets de plus en plus ambitieux. Compléter votre boite à outils avec des [Capteurs](https://github.com/arnaudrco/exemples/wiki/Capteurs), des [Afficheurs](https://github.com/arnaudrco/exemples/wiki/Les-afficheurs) en utilisant des [Instruments de mesure](https://github.com/arnaudrco/exemples/wiki/G%C3%A9n%C3%A9rateurs-et-mesures). Regarder les [Videos](https://github.com/arnaudrco/visio/wiki/Video) et montez vos propres projets pour construire des [jouets](https://github.com/anumby-source/jouets/wiki), refaire les jeux du festival [festisol](https://github.com/arnaudrco/festisol/wiki) et commencer à utiliser les nouveaux [raspberry-pico](https://github.com/anumby-source/raspberry-pico/wiki). Voulez-vous nous aider à développer d'autres applications ? Commencez un peu de code [CROUS-micro-python](https://github.com/arnaudrco/CROUS-micro-python/wiki), participez au [developpement-voiture](https://github.com/anumby-source/developpement-voiture/wiki) Anumbyffichage.pdf)
+[réaliser un afficheur à distance avec un vieil écran VGA](https://github.com/anumby-source/jouets/blob/main/affichage-a-distance/read-me-affichage.pdf)
+
+La progression par niveaux des [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) est importante pour aborder des projets de plus en plus ambitieux. Compléter votre boite à outils avec des [Capteurs](https://github.com/arnaudrco/exemples/wiki/Capteurs), des [Afficheurs](https://github.com/arnaudrco/exemples/wiki/Les-afficheurs) en utilisant des [Instruments de mesure](https://github.com/arnaudrco/exemples/wiki/G%C3%A9n%C3%A9rateurs-et-mesures). Regarder les [Videos](https://github.com/arnaudrco/visio/wiki/Video) et montez vos propres projets pour construire des [jouets](https://github.com/anumby-source/jouets/wiki), refaire les jeux du festival [festisol](https://github.com/arnaudrco/festisol/wiki) et commencer à utiliser les nouveaux [raspberry-pico](https://github.com/anumby-source/raspberry-pico/wiki). Voulez-vous nous aider à développer d'autres applications ? Commencez un peu de code [CROUS-micro-python](https://github.com/arnaudrco/CROUS-micro-python/wiki), participez au [developpement-voiture](https://github.com/anumby-source/developpement-voiture/wiki) Anumbyffichage.pdf)
 
 
 
@@ -44,7 +46,7 @@ niveau 3 :  clique et connecte toi sur une connexion WIFI pour communiquer avec 
 
 niveau 4 : les robots ; interagir avec un environnement
 
-niveau 5 : système ; éco-système, intelligence artificelle , serveur, domotique ; le Raspberry pi est interdit d'importation en Australie mais c'est un outil très puissant! 
+niveau 5 : système ; éco-système, intelligence artificelle , serveur, domotique ; le Raspberry pi est un outil très puissant! 
 
 ![affiche](https://github.com/arnaudrco/exemples/blob/main/affiche.png)
 
