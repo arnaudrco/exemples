@@ -4,6 +4,7 @@ anumby : [developpement-voiture](https://github.com/anumby-source/developpement-
 
 ![ukraine](https://github.com/arnaudrco/exemples/blob/main/ukraine.png)
 
+Les fichiers [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki)  sont sous format pdf dans le wiki
 
 https://user-images.githubusercontent.com/90700891/155982247-c48908b8-f418-4d2f-b628-dde117e834fd.mp4
 
