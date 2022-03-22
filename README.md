@@ -2,8 +2,6 @@
 
 anumby : [developpement-voiture](https://github.com/anumby-source/developpement-voiture/wiki) [jouets](https://github.com/anumby-source/jouets/wiki) [raspberry-pico](https://github.com/anumby-source/raspberry-pico/wiki) arnaudrco : [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) [visio](https://github.com/arnaudrco/visio/wiki) [festisol](https://github.com/arnaudrco/festisol/wiki) [CROUS-micro-python](https://github.com/arnaudrco/CROUS-micro-python/wiki) [piano](https://github.com/arnaudrco/piano-pour-adulte-debutant/wiki) ateliers numériques [repair-café-d'orsay](https://www.repaircafe-orsay.org/category/blog/ateliers-numeriques-blog/)
 
-![ukraine](https://github.com/arnaudrco/exemples/blob/main/ukraine.png)
-
 Les fichiers [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki)  sont sous format pdf dans le wiki
 
 https://user-images.githubusercontent.com/90700891/159453511-cbb73408-28be-446e-a57d-40171141b97b.mp4
@@ -55,3 +53,5 @@ https://user-images.githubusercontent.com/90700891/156402292-697312b3-5815-46db-
 
 
 La progression par 5 niveaux des [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) est importante pour aborder des projets de plus en plus ambitieux. Compléter votre boite à outils avec des [Capteurs](https://github.com/arnaudrco/exemples/wiki/Capteurs), des [Afficheurs](https://github.com/arnaudrco/exemples/wiki/Les-afficheurs) en utilisant des [Instruments de mesure](https://github.com/arnaudrco/exemples/wiki/G%C3%A9n%C3%A9rateurs-et-mesures). Regarder les [Videos](https://github.com/arnaudrco/visio/wiki/Video) et montez vos propres projets pour refaire les jeux du festival [festisol](https://github.com/arnaudrco/festisol/wiki) et commencer à utiliser les nouveaux [raspberry-pico](https://github.com/anumby-source/raspberry-pico/wiki). Voulez-vous nous aider à développer d'autres applications ? Commencez un peu de code [CROUS-micro-python](https://github.com/arnaudrco/CROUS-micro-python/wiki), participez au [developpement-voiture](https://github.com/anumby-source/developpement-voiture/wiki) ou pour construire des [jouets](https://github.com/anumby-source/jouets/wiki) Anumby
+
+![ukraine](https://github.com/arnaudrco/exemples/blob/main/ukraine.png)
