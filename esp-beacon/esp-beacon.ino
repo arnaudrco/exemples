@@ -17,7 +17,7 @@ const bool appendSpaces = true; // makes all SSIDs 32 characters long to improve
   - don't add duplicates! You have to change one character at least
 */
 const char ssids[] PROGMEM = {
-  "Mom Use This One\n"
+  "ANUMBY\n"
   "Abraham Linksys\n"
   "Benjamin FrankLAN\n"
   "Martin Router King\n"
