@@ -4,8 +4,8 @@
 
 
 // Update these with values suitable for your network.
-const char* ssid = "NUMERICABLE-63";
-const char* password = "camille01";
+const char* ssid = "xxx";
+const char* password = "xxx";
 const char* mqtt_server = "192.168.1.90";
 #define mqtt_port 1883
 #define MQTT_USER ""
