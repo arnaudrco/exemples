@@ -1,3 +1,6 @@
+// A REICHART
+//  automate pour lire une information distante publiée sur le topic déclaré dans MQTT_SERIAL_RECEIVER_CH
+// brancher l'écran OLED sur les pins 26, 25 pour SDA et SCL
 
 #include <WiFi.h>
 #include <PubSubClient.h>
