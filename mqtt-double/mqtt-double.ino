@@ -1,5 +1,6 @@
-
+// arnaud@repaircafe-orsay.org
 // affichage de 2 topics différents pour 2 capteurs
+// les 2 affichages apparaissent suivant leur arrivée sur écran OLED
 
 #include <WiFi.h>
 #include <PubSubClient.h>
