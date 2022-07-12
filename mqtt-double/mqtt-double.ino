@@ -152,26 +152,6 @@ void callback(char* topic, byte *payload, unsigned int length) {
   display.display();
     Serial.println();
 }
-/*
-void callback2(char* topic, byte *payload, unsigned int length) {
-    Serial.println("-------new message from broker-----");
-    Serial.print("channel:");
-    Serial.println(topic);
-    Serial.print("data:");
-    Serial.write(payload, length);
-    char tempString[50];
-    for(int i=0;i< length; i++){
-      tempString[i]=payload[i];
-    }
-//     display.clear();
- printBuffer("MQTT",0, 10, 16);
-    tempString[length]=0;
-    printBuffer(topic,0, 30, 10);
-   printBuffer(tempString,0, 46, 16);
-  display.display();
-    Serial.println();
-}
-*/
 void setup() {
   Serial.begin(115200);
     init_oled();
