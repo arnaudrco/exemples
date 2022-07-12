@@ -6,6 +6,5 @@ https://user-images.githubusercontent.com/90700891/178440713-50278df6-b641-4403-
 
 
 
-https://github.com/arnaudrco/exemples/blob/main/ateliers-arduino/champ.mp4
 
 
