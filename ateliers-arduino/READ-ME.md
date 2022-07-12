@@ -17,11 +17,11 @@ La porte NAND prend en entrée les 2 oscillateurs et fournit un signal dont la v
 
 résistance ajoutée de 47 Kohms vers la masse 
 
-Calcul du colpitts
+Calcul du colpitts :
 
 ![colpitts](https://github.com/arnaudrco/exemples/blob/main/ateliers-arduino/colpitss-calcul.png)
 
-Calcul du passe bas
+Passe bas d'ordre 1 :
 
 ![passe bas](https://github.com/arnaudrco/exemples/blob/main/ateliers-arduino/passe-bas.png)
 
