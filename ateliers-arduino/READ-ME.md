@@ -7,7 +7,7 @@ https://user-images.githubusercontent.com/90700891/178440713-50278df6-b641-4403-
 
 Le montage utilise 2 oscillateurs Colpitts branchés sur une porte logique NAND d'un circuit intégré très économique CD4011
 
-capacités suivant la self : 2 x 2 nF 
+capacités suivant la self : 2 x 2 nF pour une féquence de 200 KHz
 
 capacités suivant le nombre de tours de fil téléphone : 2 x 22 nF pour 3 m de fil
  
