@@ -11,8 +11,8 @@ capacités suivant le nombre de tours de fil téléphone : 2 x 22 nF pour 3 m de
  
 Pour le filtre passe bas : 2 résistances de 15 Kohms et 47 Kohms  et une capacité de 22 nF
 
+Calcul du colpitts
 
-
-
+![colpitts](https://github.com/arnaudrco/exemples/blob/main/ateliers-arduino/colpitss-calcul.png)
 
 
