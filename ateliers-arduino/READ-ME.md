@@ -25,4 +25,9 @@ Passe bas d'ordre 1 :
 
 ![passe bas](https://github.com/arnaudrco/exemples/blob/main/ateliers-arduino/passe-bas.png)
 
+Simulation sous LTSpice réalisée par Etienne du Repair Café d'Orsay
+
+![image](https://user-images.githubusercontent.com/90700891/179235423-2dede77b-be4b-40c9-91a4-f446927ebc59.png)
+
+
 
