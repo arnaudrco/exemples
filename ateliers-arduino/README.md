@@ -22,3 +22,9 @@ Amusez vous à faire un chenillard avec les 6 bascules Data d'un 74174
 
 
 ![image](https://user-images.githubusercontent.com/90700891/180146715-17085340-7267-4194-b7f0-462d72586c42.png)
+
+
+
+
+https://user-images.githubusercontent.com/90700891/182446104-b206a357-cf1d-429e-8001-e9e74753f54d.mp4
+
