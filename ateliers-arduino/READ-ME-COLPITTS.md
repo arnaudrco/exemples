@@ -29,5 +29,15 @@ Simulation sous LTSpice réalisée par Etienne du Repair Café d'Orsay
 
 ![image](https://user-images.githubusercontent.com/90700891/179235423-2dede77b-be4b-40c9-91a4-f446927ebc59.png)
 
+Réalisation d'un inductancemetre
+
+![image](https://user-images.githubusercontent.com/90700891/183016660-ece7ec2c-8a40-4c21-bfc2-32ef0df9db37.png)
+
+![image](https://user-images.githubusercontent.com/90700891/183016831-47a7b8bf-74bd-407f-b83e-0a8bd39b46a0.png)
+
+
+![image](https://user-images.githubusercontent.com/90700891/183016317-8eef02a3-aba4-4e5a-8135-2098673903ac.png)
+
+
 
 
