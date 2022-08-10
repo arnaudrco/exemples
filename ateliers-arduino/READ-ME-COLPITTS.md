@@ -27,6 +27,12 @@ Passe bas d'ordre 1 :
 
 Simulation sous LTSpice réalisée par Etienne du Repair Café d'Orsay
 
+
+
+https://user-images.githubusercontent.com/90700891/183950473-4037eb96-cf70-466e-aba6-e0d78b4ac187.mp4
+
+
+
 ![image](https://user-images.githubusercontent.com/90700891/179235423-2dede77b-be4b-40c9-91a4-f446927ebc59.png)
 
 Réalisation d'un inductancemetre
