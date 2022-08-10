@@ -25,13 +25,11 @@ Passe bas d'ordre 1 :
 
 ![passe bas](https://github.com/arnaudrco/exemples/blob/main/ateliers-arduino/passe-bas.png)
 
-Simulation sous LTSpice réalisée par Etienne du Repair Café d'Orsay
-
-
+Simulation réalisée par Etienne du Repair Café d'Orsay. Nous avons visualisé le signal en sortie du filtre passe bas du mélangeur et la sortie sur le piezzo 
 
 https://user-images.githubusercontent.com/90700891/183950473-4037eb96-cf70-466e-aba6-e0d78b4ac187.mp4
 
-
+Schéma sous LTSpice 
 
 ![image](https://user-images.githubusercontent.com/90700891/179235423-2dede77b-be4b-40c9-91a4-f446927ebc59.png)
 
