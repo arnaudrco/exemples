@@ -13,8 +13,8 @@ esp.osdebug(None)
 import gc
 gc.collect()
 
-ssid = 'MicroPython-AP'
-password = '123456789'
+ssid = 'RCO'
+password = '12345678'
 
 ap = network.WLAN(network.AP_IF)
 ap.active(True)
