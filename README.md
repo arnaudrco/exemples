@@ -6,6 +6,14 @@ Les fichiers [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) 
 
 https://user-images.githubusercontent.com/90700891/159453511-cbb73408-28be-446e-a57d-40171141b97b.mp4
 
+Orientation d'une cellule solaire en rotation 
+
+https://user-images.githubusercontent.com/90700891/198824762-fec592ae-3474-4456-a56c-69bd94aff90b.mp4
+
+Charge d'une batterie de voiture recyclé par un panneau solaire
+
+https://user-images.githubusercontent.com/90700891/198824774-765ce364-e0da-40d2-87c9-ca501f226a7d.mp4
+
 Derniers projets
 
 https://user-images.githubusercontent.com/90700891/155982247-c48908b8-f418-4d2f-b628-dde117e834fd.mp4
