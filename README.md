@@ -10,7 +10,7 @@ Orientation d'une cellule solaire en rotation
 
 https://user-images.githubusercontent.com/90700891/198824762-fec592ae-3474-4456-a56c-69bd94aff90b.mp4
 
-Charge d'une batterie de voiture recyclé par un panneau solaire
+Charge d'une batterie de voiture recyclée par un panneau solaire
 
 https://user-images.githubusercontent.com/90700891/198824774-765ce364-e0da-40d2-87c9-ca501f226a7d.mp4
 
