@@ -6,7 +6,7 @@ Les fichiers [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) 
 
 https://user-images.githubusercontent.com/90700891/159453511-cbb73408-28be-446e-a57d-40171141b97b.mp4
 
-Orientation d'une cellule solaire en rotation 
+Orientation automatique d'une cellule solaire en rotation : a chaque démarrage, le moteur cherche la meilleure orientation en pivotant de chaque côté
 
 https://user-images.githubusercontent.com/90700891/198824762-fec592ae-3474-4456-a56c-69bd94aff90b.mp4
 
