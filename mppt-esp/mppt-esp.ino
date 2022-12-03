@@ -3,7 +3,7 @@
 /*
 placer le niveau POWER sur l'entrée A0
 
-Pour le projet tournesol 🌻 les reflets sur les vitres généraient des échos parasites. 
+Pour le projet tournesol 🌻 les reflets sur les vitres généraient des échos parasites et des faux maxima locaux. 
        En travaillant sur des secteurs et avec seulement 3 itérations il converge. cela marche bien. 
        Algorithme transpose pour mppt
        
