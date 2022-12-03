@@ -1,6 +1,15 @@
 // MPPT
 // arnaudrco https://github.com/arnaudrco/exemples/blob/main/README.md
-// placer le niveau POWER sur l'entrée A0
+/*
+placer le niveau POWER sur l'entrée A0
+
+Pour le projet tournesol 🌻 les reflets sur les vitres généraient des échos parasites. 
+       En travaillant sur des secteurs et avec seulement 3 itérations il converge. cela marche bien. 
+       Algorithme transpose pour mppt
+       
+       NON TESTE
+       
+       */
 
 // Define stepper motor connections and steps per revolution:
 #define pwmPin D1
