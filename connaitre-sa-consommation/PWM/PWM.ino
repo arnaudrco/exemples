@@ -2,11 +2,14 @@
 
   A REICHART
   version arduino
+  
+  (attention : toutes les sorties ne permettent pas de générer un signal PWM)
 
 */
 
 #define pinOuEstBrancheLePotentiometre  A0       // Le potentiomètre servant à faire varier la luminosité de la LED sera branché sur l'entrée A0 de l'Arduino Nano
-#define pinOuEstBrancheLaLED            3 // La LED sera quant à elle branchée sur la sortie D3 de l'Arduino Nano (attention : toutes les sorties ne permettent pas de générer un signal PWM)
+#define pinOuEstBrancheLaLED            3 // La LED sera quant à elle branchée sur la sortie D3 de l'Arduino Nano 
+
 
 int valeurTensionEntreeAnalogique;              // Variable qui contiendra la valeur de la tension mesurée sur l'entrée analogique (valeur comprise entre 0 et 1023, car lecture sur 10 bits)
 int valeurRaccordCycliqueSignalPwm;             // Variable qui contiendra la valeur du rapport cyclique du signal PWM à générer
@@ -40,7 +43,7 @@ void loop()
   // *****************************************************************************************************************************
   // Pour rappel : la valeur retournée sera comprise entre 0 et 1023, car il s'agit là d'une lecture sur 10 bits (0 correspondant à 0V, et 1023 à +5V)
 
-  valeurTensionEntreeAnalogique = analogRead(pinOuEstBrancheLePotentiometre)/ 3;
+  valeurTensionEntreeAnalogique = analogRead(pinOuEstBrancheLePotentiometre)/ 3; // le potentiomètre est relié sur 3.3 V de référence
 
   // *****************************************************************************************************************************
   // Conversion tension -> rapport cyclique
