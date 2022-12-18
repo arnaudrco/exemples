@@ -14,6 +14,10 @@ Charge d'une batterie de voiture recyclée par un panneau solaire
 
 https://user-images.githubusercontent.com/90700891/198824774-765ce364-e0da-40d2-87c9-ca501f226a7d.mp4
 
+# Eolienne
+
+https://user-images.githubusercontent.com/90700891/208292424-e09d9a0f-98ff-4164-87f3-9af8bb3a897b.mp4
+
 Derniers projets
 
 https://user-images.githubusercontent.com/90700891/155982247-c48908b8-f418-4d2f-b628-dde117e834fd.mp4
@@ -33,6 +37,8 @@ https://user-images.githubusercontent.com/90700891/155982247-c48908b8-f418-4d2f-
 La progression par niveaux des [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki) est importante pour aborder des projets de plus en plus ambitieux. Compléter votre boite à outils avec des [Capteurs](https://github.com/arnaudrco/exemples/wiki/Capteurs), des [Afficheurs](https://github.com/arnaudrco/exemples/wiki/Les-afficheurs) en utilisant des [Instruments de mesure](https://github.com/arnaudrco/exemples/wiki/G%C3%A9n%C3%A9rateurs-et-mesures). Regarder les [Videos](https://github.com/arnaudrco/visio/wiki/Video) et montez vos propres projets pour construire des [jouets](https://github.com/anumby-source/jouets/wiki), refaire les jeux du festival [festisol](https://github.com/arnaudrco/festisol/wiki) et commencer à utiliser les nouveaux [raspberry-pico](https://github.com/anumby-source/raspberry-pico/wiki). Voulez-vous nous aider à développer d'autres applications ? Commencez un peu de code [CROUS-micro-python](https://github.com/arnaudrco/CROUS-micro-python/wiki), participez au [developpement-voiture](https://github.com/anumby-source/developpement-voiture/wiki) 
 
 [Une guirlande de Noel sous arduino](https://github.com/arnaudrco/exemples/blob/main/guirlande/read-me-guirlande.pdf)
+
+
 
 Voulez vous comprendre le fonctionnement des appareils électroniques qui nous entourent ? Vous initiez aux logiciels libres ? Ou simplement réaliser un montage à emporter chez vous ?
 Vous pouvez être accompagnés pour réaliser un montage pour économiser l’énergie,  pour recycler des anciens jouets,  ou jouer avec des composants : des cellules photovoltaïques pour réaliser un tracker solaire , un détecteur de CO2 pour mesurer la pollution, un colorimètre pour faire un caméléon , un capteur de pression-température-humidité  pour une station météo, un détecteur à ultra-son pour une harpe musicale, ou une installation de domotique, des objets connectés, un robot, un arrosage pour un jardin partagé …
