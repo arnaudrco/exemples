@@ -4,11 +4,6 @@ anumby : [developpement-voiture](https://github.com/anumby-source/developpement-
 
 Les fichiers [exemples-de-montages](https://github.com/arnaudrco/exemples/wiki)  sont sous format pdf dans le wiki
 
-Eolienne
-
-![eole1](https://user-images.githubusercontent.com/90700891/208302374-480ba073-9a8c-435b-a88e-9b98f8024338.gif)
-
-
 https://user-images.githubusercontent.com/90700891/159453511-cbb73408-28be-446e-a57d-40171141b97b.mp4
 
 Orientation automatique d'une cellule solaire en rotation : a chaque démarrage, le moteur cherche la meilleure orientation en pivotant de chaque côté
