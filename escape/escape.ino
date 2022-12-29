@@ -9,8 +9,9 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h> 
 
-#define pinRST 9    
-#define pinSS 10
+#define SS_PIN D1
+#define RST_PIN D2
+
 const byte lcdAddr = 0x27;
 const byte lcdCols = 16;
 const byte lcdRows = 2;
