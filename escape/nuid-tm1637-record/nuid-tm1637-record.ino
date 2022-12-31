@@ -46,9 +46,9 @@
 //#define RST_PIN 9
 
 // A MODIFIER SUIVANT NUID 
-#define BOUTEILLE1 0xC353E4CD
-#define BOUTEILLE2 0x518A22D5
-#define BOUTEILLE3 0x51FF22D5
+#define BOUTEILLE1 0xC353
+#define BOUTEILLE2 0x518A
+#define BOUTEILLE3 0x51FF
 
 #define SS_PIN D1
 #define RST_PIN D2
@@ -134,12 +134,13 @@ void loop() {
 
 
 /**
- * Helper routine to dump a byte array as hex values to Serial. 
+ *  A COMPLETER 
+    si le nuid de la bouteille n est enregistré isRecord retourne le nombre n 
  */
- int isRecord( byte *buffer ){ // A REMPLIR si le nuid de la bouteille n est enregistré retourne le nombre n
+ int isRecord( byte *buffer ){ 
     unsigned long k;
     k= buffer[0] * 256 + buffer[1] ;
-        k= 65536 * k + buffer[2] * 256 + buffer[3];
+ //       k= 65536 * k + buffer[2] * 256 + buffer[3]; // VERSION 8 chiffres si besoin 
     switch (k){
           case BOUTEILLE1: // nuid de la bouteille 1
           return(1);
@@ -155,6 +156,8 @@ void loop() {
           return(3);
       // statements
       break;
+
+      /* A COMPLETER POUR n BOUTEILLES */
       
     }
     return(0);
