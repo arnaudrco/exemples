@@ -1,83 +1,58 @@
-/*****************************************************************************
-         Copyright  Motahhir  All Rights Reserved
-*****************************************************************************/
+// MPPT
+// arnaudrco https://github.com/arnaudrco/exemples/blob/main/README.md
+// placer le niveau POWER sur l'entrée A0
 
-/*****************************************************************************
-   Header Files included
- *****************************************************************************/
+// Define stepper motor connections and steps per revolution:
+#define pwmPin D2
 
-/******************************************************************************
-   PROJECT :  MPPT (P&O) implementation
-   Function : P&O Arduino Code
- ******************************************************************************
- * *
-    Written by  :  Saad Motahhir                       Date : 09/10/2016
- * *
-    Email : saad.motahhir@usmba.ac.ma
- ******************************************************************************
-   MODIFICATION LOG:
- ******************************************************************************
-   Modified by :                                           Date :
-   Comments :
- ******************************************************************************/
-#include <LiquidCrystal.h>
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+#define delai 10
+#define stepsPerScan 20 // nombre de pas par itération
+#define seuil1 5 // nombre de pas pour le seuil bas
+#define seuil2 15 // seuil haut
+#define MIN 0 // nombre de pas pour le seuil bas
+#define MAX 1000 // seuil haut
+#define NN 1000 // itérations pour readPower
 
-float sensorValue1 = 0;
-float sensorValue2 = 0;
-float voltageValue = 0;
-float currentValue = 0;
-float Power_now = 0, Power_anc = 0, voltage_anc = 0;
-float delta = 3;
-float pwm = 128;
-void setup()
-{
-  pinMode(6, OUTPUT);
-  lcd.begin(16, 2);
+
+#define photoPin A0
+
+int PWM=MIN;
+float rrr=0;
+       
+void setup() {
+  Serial.begin(115200);
+    Serial.println("====================");
+  // Declare pins as output:
+  pinMode(pwmPin, OUTPUT);
+     analogWrite(pwmPin, MIN);
+     
 }
 
-void loop()
-{
-  sensorValue1 = analogRead(A0);
-  sensorValue2 = analogRead(A1);
-  voltageValue = (sensorValue1 * 5.0 / 1023.0) * 5;
-  currentValue = (sensorValue2 * 5.0 / 1023.0);
-  lcd.setCursor(0, 0);
-  Power_now = voltageValue * currentValue;
-
-  lcd.print("Ppv=");
-  lcd.print(Power_now);
-  lcd.print("W");
-  lcd.print(pwm);
-  lcd.setCursor(0, 1);
-  lcd.print("V=");
-  lcd.print(voltageValue);
-  lcd.print("V I=");
-  lcd.print(currentValue);
-  lcd.print("A");
-
-
-
-  if (Power_now > Power_anc)
-  { if (voltageValue > voltage_anc)
-      pwm = pwm - delta;
-    else
-      pwm = pwm + delta;
+void loop() {
+  float nnn;
+  nnn= readPower();
+  if (nnn >= rrr ) {
+    PWM++; 
   }
-  else
-  {
-    if (voltageValue > voltage_anc)
-      pwm = pwm + delta;
-    else
-      pwm = pwm - delta;
-  }
-  Power_anc = Power_now;
-  voltage_anc = voltageValue;
-  if (pwm < 20)
-    pwm = 20;
-  if (pwm > 150)
-    pwm = 150;
+  else PWM--;
+  rrr = nnn ; 
+  if (PWM < 0 ) PWM = 0;
+  if ( PWM > MAX ) PWM = MAX;
+   Serial.print(nnn );Serial.print(";" );
+             Serial.println(PWM );
 
-  analogWrite(6, pwm);
 }
+               
 
+float readPower(){ // lecture POWER V² PWM
+  long int ppp;
+  long int mmm=0; // max
+   analogWrite(pwmPin, PWM);
+   for (int i=NN; i; i--) {
+      ppp= analogRead(photoPin);
+      if (ppp > mmm) mmm=ppp; 
+   }
+
+   return (mmm * mmm * PWM / MAX);
+
+}
