@@ -1,7 +1,7 @@
 // MPPT
 // arnaudrco https://github.com/arnaudrco/exemples/blob/main/README.md
 /*
-placer le niveau POWER sur l'entrée A0
+placer la tension V sur l'entrée A0
 
 lecture POWER = V² PWM / R
 
@@ -71,7 +71,7 @@ int maximum(int n) { // retourne la position du maximum sur n steps
     if ( (PWM + dir * n ) < MIN) return (0);
     int photoMax = readPower( ) ;
     int pos=0;
-
+POWER
   // Spin the stepper motor 1 revolution slowly:
   for (int i = 0; i < n; i++) {
     // These four lines result in 1 step:
