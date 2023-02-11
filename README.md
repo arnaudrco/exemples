@@ -14,7 +14,7 @@ Charge d'une batterie de voiture recyclée par un panneau solaire
 
 https://user-images.githubusercontent.com/90700891/198824774-765ce364-e0da-40d2-87c9-ca501f226a7d.mp4
 
-Alimentation MPPT par un panneau solaire
+Alimentation MPPT par un panneau solaire : le condensateur stocke l'énergie du panneau et l'envoie à une résistance chauffante
 
 https://user-images.githubusercontent.com/90700891/218267075-b154935d-5a69-434e-a7e1-6af01e85d4fe.mp4
 
