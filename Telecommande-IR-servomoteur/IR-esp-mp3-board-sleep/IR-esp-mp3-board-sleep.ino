@@ -1,7 +1,7 @@
 /*
- * 
- * 
-code mp3 pour moteur 3 benne
+ * Arnaud https://github.com/arnaudrco/exemples/blob/main/Telecommande-IR-servomoteur/IR-esp-mp3-board-sleep/IR-esp-mp3-board-sleep.ino
+ * ATTENTION rentrer les codes pour votre télécommande (emetteur IR)
+code pour commander les 3 moteurs ( avance , tourne, soulève la benne)
 FF22DD >=
 FFE01F EQ
 
