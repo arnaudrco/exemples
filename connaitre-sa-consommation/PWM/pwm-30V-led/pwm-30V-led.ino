@@ -8,8 +8,8 @@
 #define GND  5 // LED gnd
 #define PERIODE 5
 #define photoPin A0
-#define SEUIL 650 // entrée divisée par 10 soit 15V / 5V * 1024 / 10 
-#define S1 500 // entrée divisée par 10 soit 15V / 5V * 1024 / 10 
+#define SEUIL 650 // entrée divisée par 10 soit 30V / 5V * 1024 / 10 
+#define S1 500 // entrée divisée par 10 soit 25V / 5V * 1024 / 10 
 #define MIN 16 // seuil bas
 #define MAX 255 // seuil haut
 int PWM=MIN;
