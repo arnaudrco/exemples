@@ -2,7 +2,6 @@
 // arnaudrco https://github.com/arnaudrco/exemples/blob/main/README.md
 // placer le niveau POWER sur l'entrée A0
 
-// Define stepper motor connections and steps per revolution:
 #define pwmPin 3
 #define photoPin A0
 #define SEUIL 300 // entrée divisée par 10 soit 15V / 5V * 1024 / 10 
