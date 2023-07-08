@@ -142,8 +142,7 @@ void bip(){
       stopM();
 }
 void stopM() {
-  analogWrite(moteur2A, 0);
-  analogWrite(moteur2B, 0);
+
     analogWrite(moteur1A, 0);
   analogWrite(moteur1B, 0);
 
