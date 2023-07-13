@@ -3,6 +3,16 @@
  * ATTENTION rentrer les codes pour votre télécommande (emetteur IR)
  
  ajouter la bibliothèque IRremoteESP8266 dans outils > gérer les bibliothèque
+
+haut 
+205D609F
+205D40BF
+droite
+205D58A7
+205D708F
+stop
+205D38C7
+ 
 **********************************************************
  * IRremoteESP8266: IRrecvDemo - demonstrates receiving IR codes with IRrecv
  * This is very simple teaching code to show you how to use the library.
@@ -56,10 +66,11 @@ Servo servo1,servo2;
 #define moteur2A D3 // rotation
 #define moteur2B D4
 
-#define haut 0xFF18E7
-#define droite 0xFF5AA5
-#define bas 0xFF4AB5
-#define gauche 0xFF10EF
+#define haut 0x205D609F
+#define droite 0x205D58A7
+
+#define bas 0x205D40BF
+#define gauche 0x205D708F
 
 #define GND D7
 
