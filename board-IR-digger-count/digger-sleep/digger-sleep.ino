@@ -6,7 +6,7 @@
 
 6 boutons 
 
-Après les essais de Maxence 5 ans, j'ai ajouté à sa demande un  boutons STOP pour arrêter le moteur et ARRET marche arrêt pour économiser les piles
+Après les essais de Maxence 5 ans, j'ai ajouté à sa demande deux  boutons STOP pour arrêter le moteur et ARRET marche arrêt pour économiser les piles
  
 **********************************************************
  * IRremoteESP8266: IRrecvDemo - demonstrates receiving IR codes with IRrecv
