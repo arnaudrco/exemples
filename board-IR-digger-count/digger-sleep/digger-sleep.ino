@@ -1,17 +1,12 @@
 /*
  * Arnaud https://github.com/arnaudrco/exemples/blob/main/Telecommande-IR-servomoteur/IR-esp-mp3-board-sleep/IR-esp-mp3-board-sleep.ino
- * ATTENTION rentrer les codes pour votre télécommande (emetteur IR)
+ *  rentrer les codes pour votre télécommande (emetteur IR)
  
  ajouter la bibliothèque IRremoteESP8266 dans outils > gérer les bibliothèque
 
-haut 
-205D609F
-205D40BF
-droite
-205D58A7
-205D708F
-stop
-205D38C7
+6 boutons 
+
+Après les essais de Maxence 5 ans, j'ai ajouté à sa demande un  boutons STOP pour arrêter le moteur et ARRET marche arrêt pour économiser les piles
  
 **********************************************************
  * IRremoteESP8266: IRrecvDemo - demonstrates receiving IR codes with IRrecv
