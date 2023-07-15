@@ -156,7 +156,7 @@ stopD();
 
 void moteur( int x, int v){
     switch (x){
-      if (lastDirection != avant) v=255; // accélération de départ
+      if (lastDirection != x) v=255; // accélération de départ
       case avant :
             Serial.println("Moteur avant");
                       lastDirection = avant;
