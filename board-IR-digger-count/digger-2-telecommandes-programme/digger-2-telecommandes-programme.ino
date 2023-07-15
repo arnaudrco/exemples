@@ -113,10 +113,12 @@ byte depile(){
 }
 void execute() {
   while ( int x=depile()){
+        moteur(x,255);
+          delay(100); // bip
     moteur(lastDirection,vitesse);
     moteur(x,vitesse);
-  delay(500); // bip
-      stopM();
+  delay(400); // bip
+      stopM();      stopD();
   delay(200); // bip   
   }
 }
@@ -138,35 +140,23 @@ execute();
   Serial.println(kRecvPin);
   mmm = millis();    dodo = millis();
 }
-
-void bip(){
-   // AUTOTEST les deux moteurs tournent en programmation avant,
-  // à HAUTe vitesse
-
-  //moteur 1
-  analogWrite(moteur1A, vitesse);
-  analogWrite(moteur1B, 0);
-  
-  delay(200); // bip
-    stopM();
-  delay(500); // bip
-        analogWrite(moteur1A, 0);
-  analogWrite(moteur1B, vitesse);
-  
-  delay(200); // bip
-      stopM();
-}
-void stopM() {
+void stopM() { // avant arriere
     analogWrite(moteur1A, 0);
   analogWrite(moteur1B, 0);
 
 }
-void stopD() {
+void stopD() {// direction droite gauche
   analogWrite(moteur2A, 0);
   analogWrite(moteur2B, 0);
 }
+void stopA() { // stop all
+stopM();
+stopD();
+}
+
 void moteur( int x, int v){
     switch (x){
+      if (lastDirection != avant) v=255; // accélération de départ
       case avant :
             Serial.println("Moteur avant");
                       lastDirection = avant;
@@ -230,16 +220,16 @@ void loop() {
 //-----------------------------   virage  ---------------------  +  -
        case DROITE : 
        case DROITE1 : 
-            moteur(droite,vitesse);countD++;if(programmation) empile( droite);
+            moteur(droite,255);countD++;if(programmation) empile( droite);
             break;
        case   GAUCHE :
        case   GAUCHE1 :
-            moteur(gauche,vitesse);countD++;if(programmation) empile( gauche);
+            moteur(gauche,255);countD++;if(programmation) empile( gauche);
             break;
 //---------------- STOP---------------
       case   STOP :
       case   STOP1 :
-            stopD();stopM();
+            stopA();
             break;
             
 //---------------- ARRET---------------
@@ -248,7 +238,7 @@ void loop() {
             // ESP.deepSleep(0);
             programmation = 1 - programmation;
                Serial.println(programmation);
-            if(programmation) execute(); else  stopM(); ;// arret moteur
+            if(programmation) execute(); else  stopA(); ;// arret moteur
             break;
    }
     Serial.println("");
