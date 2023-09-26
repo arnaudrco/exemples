@@ -184,9 +184,10 @@ void setup() {
   lcd.print("P'TIWATT BONJOUR");  
   lcd.setCursor(0, 1);            
   lcd.print("   **********");  
+    lcd.backlight();
 
   // Initialisation de la console
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println ();
   Serial.print("A NOTER : ");
   Serial.print(iRedemarrage);
