@@ -1,14 +1,39 @@
 // chargeur de pile alcaline
 // Rlef 16 avril 2020 
 // charge 100 mA 
-// montage juste pour le fun
+// RCO mise à jour Arnaud 2023
 
 #define  VERSION  "V2.4 27/02/2023\n"
 // support du format pour teleplot sous VSCode
 
+#define  TIME_READ  10000
+#define  TIME_LOAD  800
+// #define  CMD_LOAD   PB1
+#define  CMD_LOAD   2
+//#define  CMD_DRAIN  PB2
+#define  CMD_DRAIN  3
+#define  TX         PB3
+#define  RX         0 
 
-#define   USE_TELEPLOT
-#undef   USE_CONSOLE
+#define  LOAD_ON      digitalWrite(CMD_LOAD,  LOW); 
+#define  LOAD_OFF     digitalWrite(CMD_LOAD,  HIGH); 
+#define  DRAIN_ON     digitalWrite(CMD_DRAIN, HIGH); 
+#define  DRAIN_OFF    digitalWrite(CMD_DRAIN, LOW); 
+#define  PRT          Serial.print
+#define  PRTL         Serial.println
+
+#define  REF_EXT  3.3 // référence voltage donné par arduino
+// #define  REF_EXT  2.492
+#define  MAX_VAL  1.750  // correspond à 700 pour ValAdc
+#define  MAX_ADC  720
+#define  RESISTANCE 24   /// resistance de drain = 24 ohm 
+//#define  INC_CHARGE  0.027778   // équivalent à 100 mA durant 1 seconde
+#define  INC_CHARGE  0.555       // équivalent à 100 mA durant 20 seconde
+#define  NBPASSMAX   10
+
+
+// #define   USE_TELEPLOT
+#define   USE_CONSOLE
 #undef   USE_TRACEUR
 #undef   USE_LOGVIEW
 
@@ -27,7 +52,7 @@
 // A2 Pile| 3:PB4  6: PB1 |Cmd charge 100mA
 //        | 4:Gnd  5: PB0 |External Ref ==> TL431
 //        -----------------
-  Serial.begin(115200);
+
 // SoftwareSerial TinySerial(RX, TX);  // ( 0 , 3 )
 char  Buf[24];
 float Charge_Totale = 0.0;
@@ -43,7 +68,9 @@ unsigned long Tpx   = 0;
 
 //************************************************************************
 void setup() {
-  TinySerial.begin(9600);
+    Serial.begin(115200);
+  // TinySerial.begin(9600);
+  
   pinMode(CMD_DRAIN,OUTPUT);
   pinMode(CMD_LOAD,OUTPUT);
   LOAD_OFF  // load coupée
@@ -53,13 +80,8 @@ void setup() {
   Charge_Totale = 0.0;
   Temps         = 0;
   NbPass        = 0;
-  #ifdef USE_LOGVIEW
-    PRTL("$1;Start");
-  #endif
   
-  #ifdef USE_CONSOLE
-  PRTL(VERSION);
-  #endif
+    PRTL("Arnaud ");
 
 }
 ///********************************************************/
