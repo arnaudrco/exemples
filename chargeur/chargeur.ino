@@ -8,9 +8,7 @@
 
 #define  TIME_READ  10000
 #define  TIME_LOAD  800
-// #define  CMD_LOAD   PB1
-#define  CMD_LOAD   2
-//#define  CMD_DRAIN  PB2
+#define  CMD_LOAD   2 
 #define  CMD_DRAIN  3
 #define  TX         PB3
 #define  RX         0 
