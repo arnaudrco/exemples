@@ -61,7 +61,7 @@ Adafruit_PCD8544 display = Adafruit_PCD8544(4,5,6,7,8);
 #define  PRTL         Serial.println
 
 #define  REF_EXT  3.3 // référence voltage donnée par arduino
-#define  EVB  5.0 / 2048
+#define  EVB  3.3 / 1024
 #define  MAX_VAL  1.750  // correspond à 700 pour ValAdc
 #define  MAX_ADC  720
 #define  RESISTANCE 24   /// resistance de drain = 24 ohm 
@@ -111,7 +111,7 @@ void setup() {
   LOAD_OFF  // load coupée
   DRAIN_OFF // drain coupé
 
- // analogReference(EXTERNAL);  // utilise la tension du TL431 sur la pin 5 ===> 2.493 V 
+  analogReference(EXTERNAL);  // utilise la tension du TL431 sur la pin 5 ===> 2.493 V 
   Charge_Totale = 0.0;
   Temps         = 0;
   NbPass        = 0;
@@ -164,9 +164,9 @@ void loop() {
   display.setTextSize(1);
   display.setTextColor(BLACK);
   display.setCursor(0,0);
-    display.print(">Vp:"); display.println(PileValue);
-    display.print(">Ri:"); display.println(deltaV);
-    display.print(">Qc:"); display.println(Charge_Totale);
+    display.print("Vp:"); display.println(PileValue);
+    display.print("Ri:"); display.println(deltaV);
+    display.print("Qc:"); display.println(Charge_Totale);
   display.display();
 
     
@@ -308,9 +308,6 @@ void test()
   display.setCursor(0,0);
   display.println("Arnaud");
   display.println("CHARGE");
-  display.setTextSize(2);
-  display.setTextColor(BLACK);
-//  display.print("0x"); display.println(0xDEADBEEF, HEX);
   display.display();
 
 
