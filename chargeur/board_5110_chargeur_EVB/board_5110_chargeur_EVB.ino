@@ -40,7 +40,7 @@ Adafruit_PCD8544 display = Adafruit_PCD8544(4,5,6,7,8);
 
 
 // chargeur de pile alcaline
-// VERSION EVB GREEN-LOGIC puce lgt8f328p ATTENTION numérisation sur 2048 
+// VERSION EVB GREEN-LOGIC puce lgt8f328p
 // charge 100 mA 
 // RCO mise à jour Arnaud 2023
 
