@@ -43,12 +43,12 @@ MODELE PROGRAMMABLE
 #define droite 3
 #define gauhec 4
 
-#define HAUT 0x205D609F
-#define DROITE 0x205D58A7
-#define BAS 0x205D40BF
-#define GAUCHE 0x205D708F
-#define STOP  0x205DE01F
-#define ARRET  0x205D38C7
+#define HAUT 0x1FE1CE3
+#define DROITE 0x1FE9C63
+#define BAS 0x1FE02FD
+#define GAUCHE 0x1FEEC13
+#define STOP  0x1FEC837
+#define ARRET  0x1FE817E 
 
 // ------------- ajout d'un 2° télécommande
 #define HAUT1 0xFF18E7
@@ -70,7 +70,7 @@ int lastDirection = 1;
 #define MAX 100
 int Index=0;
 byte Forth[MAX]; // pile Forth
-int vitesse = 192;  // 0 à 255
+int vitesse = 255;  // 0 à 255
 int programmation=1;
 
 // Le digger a un moteur pour les roues et une commande de direction pour tourner à DROITE ou à GAUCHE
@@ -112,6 +112,13 @@ byte depile(){
   }
 }
 void execute() {
+    for(int x=0 ; x < Index ; x++){
+    moteur( Forth[x],vitesse);
+  delay(400); // bip
+      stopM();      stopD();
+  delay(200); // bip  
+  }   
+  /*
   while ( int x=depile()){
         moteur(x,255);
           delay(100); // bip
@@ -120,7 +127,7 @@ void execute() {
   delay(400); // bip
       stopM();      stopD();
   delay(200); // bip   
-  }
+  }*/
 }
 void setup() {
   pinMode(GND, OUTPUT);      // board IR
@@ -230,6 +237,8 @@ void loop() {
       case   STOP :
       case   STOP1 :
             stopA();
+             Index=0;programmation = 0;
+
             break;
             
 //---------------- ARRET---------------
