@@ -4,14 +4,7 @@
  
  ajouter la bibliothèque IRremoteESP8266 dans outils > gérer les bibliothèque
 
-haut 
-205D609F
-205D40BF
-droite
-205D58A7
-205D708F
-stop
-205D38C7
+MODELE PROGRAMMABLE
  
 **********************************************************
  * IRremoteESP8266: IRrecvDemo - demonstrates receiving IR codes with IRrecv
@@ -33,53 +26,54 @@ stop
  *     
  *    
  *    
- *    
-2
-FF18E7
-6
-FF5AA5
-8
-FF4AB5
-4
-FF10EF 
-
-FF629D haut
-FFA857 bas
-
-FFC23D droite 
-FF22DD gauche
-
+ *     
  */
 #include <Arduino.h>
 #include <IRremoteESP8266.h>
 #include <IRrecv.h>
 #include <IRutils.h>
 
-#include <Servo.h>
-
-static const int servoPin1 = D8;
-static const int servoPin2 = D8;
-Servo servo1,servo2;
-
 #define moteur1A D1
 #define moteur1B D2
 #define moteur2A D3 // rotation
 #define moteur2B D4
 
-#define haut 0x205D609F
-#define droite 0x205D58A7
+#define haut 1
+#define bas 2
+#define droite 3
+#define gauhec 4
 
-#define bas 0x205D40BF
-#define gauche 0x205D708F
+#define HAUT 0x1FE1CE3
+#define DROITE 0x1FE9C63
+#define BAS 0x1FE02FD
+#define GAUCHE 0x1FEEC13
+#define STOP  0x1FEC837
+#define ARRET  0x1FE817E 
+
+// ------------- ajout d'un 2° télécommande
+#define HAUT1 0xFF18E7
+#define DROITE1 0xFF5AA5
+#define BAS1 0xFF4AB5
+#define GAUCHE1 0xFF10EF
+#define STOP1  0xFF38C7
+#define ARRET1  0xFFA25D
+// ------------- direction
+#define avant 1
+#define arriere 2
+#define droite 3
+#define gauche 4
+int lastDirection = 1;
 
 #define GND D7
-
-
 #define TEMPO 500 // temporisation 
+// ---------------------------Forth-------------
+#define MAX 100
+int Index=0;
+byte Forth[MAX]; // pile Forth
+int vitesse = 255;  // 0 à 255
+int programmation=1;
 
-int vitesse = 192;  // 0 à 255
-
-// Le digger a un moteur pour les roues et une commande de direction pour tourner à droite ou à gauche
+// Le digger a un moteur pour les roues et une commande de direction pour tourner à DROITE ou à GAUCHE
 
 // le programme active le moteur ou les roues suivant une durée countM (moteur) ou count D (direction)
 
@@ -99,91 +93,104 @@ const uint16_t kRecvPin = 14;
 
 IRrecv irrecv(D6);
 decode_results results;
-unsigned long mmm;
+unsigned long mmm, dodo; // arret au bout de 5 minutes
 int countM=0 , countD=0 ; // nb d'impulsions IR reçues
 
-void ddd(){
-  analogWrite(moteur2A, 0);
-  analogWrite(moteur2B, 255);
+void empile( byte x ){
+      Serial.print("empile ");
+  Serial.println(Forth[Index]);
+  if(Index < MAX ) Forth[Index++] = x;
+
 }
-void ggg(){
-  analogWrite(moteur2A, 255);
-  analogWrite(moteur2B, 0);
-}
-
-
-void setup() {
-//  Test droite gauche
- ddd();   delay(500);  stopM() ;
- delay(500);
-  ggg();   delay(500);  stopM() ;
-   delay(500);
-
+byte depile(){
+      Serial.print("depile ");
    
-  bip();
-
+  if ( Index == 0 ) return(0);
+  else {
+         Serial.println(Forth[Index-1]);
+    return ( Forth[--Index]   );
+  }
+}
+void execute() {
+    for(int x=0 ; x < Index ; x++){
+    moteur( Forth[x],vitesse);
+  delay(400); // bip
+      stopM();      stopD();
+  delay(200); // bip  
+  }   
+}
+void setup() {
   pinMode(GND, OUTPUT);      // board IR
   digitalWrite(GND, LOW);
-
   Serial.begin(115200);
+  // test FORTH
+    empile(avant);
+empile(arriere);
+empile(droite);
+empile(gauche);
+execute();
   irrecv.enableIRIn();  // Start the receiver
   while (!Serial)  // Wait for the serial connection to be establised.
     delay(50);
   Serial.println();
   Serial.print("IRrecvDemo is now running and waiting for IR message on Pin ");
   Serial.println(kRecvPin);
-  mmm = millis();
+  mmm = millis();    dodo = millis();
 }
-
-void bip(){
-   // AUTOTEST les deux moteurs tournent en marche avant,
-  // à haute vitesse
-
-  //moteur 1
-  analogWrite(moteur1A, vitesse);
-  analogWrite(moteur1B, 0);
-  
-  delay(200); // bip
-    stopM();
-  delay(500); // bip
-        analogWrite(moteur1A, 0);
-  analogWrite(moteur1B, vitesse);
-  
-  delay(200); // bip
-      stopM();
-}
-void stopM() {
-
+void stopM() { // avant arriere
     analogWrite(moteur1A, 0);
   analogWrite(moteur1B, 0);
 
 }
-void stopD() {
+void stopD() {// direction droite gauche
   analogWrite(moteur2A, 0);
   analogWrite(moteur2B, 0);
 }
+void stopA() { // stop all
+stopM();
+stopD();
+}
+
 void moteur( int x, int v){
     switch (x){
-      case 1 :
-            Serial.println("Moteur 1");
-
+      if (lastDirection != x) v=255; // accélération de départ
+      case avant :
+            Serial.println("Moteur avant");
+                      lastDirection = avant;
                       analogWrite(moteur1A, 0);
                       analogWrite(moteur1B, v);  
       
         break;
-        case 2 :
-            Serial.println("Moteur 2");
- 
+        case arriere :
+            Serial.println("Moteur arriere");
+                       lastDirection = arriere;
                       analogWrite(moteur1A, v);
                       analogWrite(moteur1B, 0);  
 
         break;
+
+              case droite :
+            Serial.println("Moteur droite");
+            analogWrite(moteur2A, 0);
+            analogWrite(moteur2B, v);
+                                  analogWrite(moteur1A, 0);
+                      analogWrite(moteur1B, v);  
+ 
+      
+        break;
+        case gauche :
+            Serial.println("Moteur gauche");
+            analogWrite(moteur2A, v);
+            analogWrite(moteur2B, 0);
+                                  analogWrite(moteur1A, 0);
+                      analogWrite(moteur1B, v);  
+        break;
   }
 }
 void loop() {
-/*  if ((mmm - millis()) > TEMPO){ // sommeil profond
-    ESP.deepSleep(0);
-  }*/
+    if ((millis()- dodo) > 300000){ 
+            ESP.deepSleep(0);
+    }
   if ((millis()- mmm) > TEMPO){ // 
     mmm= millis();
     if(countM > 0 ){
@@ -198,28 +205,49 @@ void loop() {
     }
   }
   if (irrecv.decode(&results)) {
-        mmm= millis();
+      mmm= millis();    dodo= millis();
     // print() & println() can't handle printing long longs. (uint64_t)
     serialPrintUint64(results.value, HEX);
     switch (results.value){
 //-----------------------------   moteur 1 ou 2  ---------------------  <<  >>
-
-
-      case haut : // 2
-            moteur( 1,vitesse); countM++;
+      case HAUT : // 2
+      case HAUT1 : // 2
+           countM++; if(programmation)  empile( avant); else moteur(avant,vitesse);
              break;
-      case bas :
-            moteur( 2,vitesse);countM++;
+      case BAS :
+      case BAS1 :
+           countM++; if(programmation) empile( arriere);else moteur(arriere,vitesse);
              break;
 //-----------------------------   virage  ---------------------  +  -
-       case droite : 
-            ddd();countD++;
+       case DROITE : 
+       case DROITE1 : 
+            moteur(droite,255);countD++;if(programmation) {
+              empile( droite);
+              stopD();
+            }
             break;
-       case   gauche :
-            ;ggg();countD++;
+       case   GAUCHE :
+       case   GAUCHE1 :
+            moteur(gauche,255);countD++;if(programmation) {
+              empile( gauche);stopD();
+            }
             break;
+//---------------- STOP ---------------
+      case   STOP :
+      case   STOP1 :
+            stopA();
+             Index=0;programmation = 0;
 
-
+            break;
+            
+//---------------- ARRET rouge ---------------
+      case   ARRET :
+      case   ARRET1 :
+            // ESP.deepSleep(0);
+            programmation = 1 - programmation;
+               Serial.println(programmation);
+            if(programmation) execute(); else  stopA(); ;// arret moteur
+            break;
    }
     Serial.println("");
     irrecv.resume();  // Receive the next value
