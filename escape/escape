@@ -1,0 +1,71 @@
+
+ Installation du site (sans HTTPS)
+1) Installer les dépendances système
+
+sudo apt update
+sudo apt install python3 python3-venv nginx -y
+
+2) Récupérer le projet
+
+git clone https://gitlab.com/x/escape-game.git
+cd escape-game
+
+3) Créer l’environnement Python
+
+python3 -m venv venv
+source venv/bin/activate
+pip install flask gunicorn
+
+4) Tester l’application en local
+
+python escape_game.py
+
+5) Lancer en mode production avec Gunicorn
+
+gunicorn -w 1 -b 127.0.0.1:5000 escape_game:app
+
+6) Configurer Nginx (reverse proxy)
+Créer la config :
+
+sudo nano /etc/nginx/sites-available/escape_game
+
+Contenu :
+
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+Activer et recharger :
+
+sudo ln -s /etc/nginx/sites-available/escape_game /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+7) (Optionnel) Démarrage automatique au boot
+Créer le service :
+
+sudo nano /etc/systemd/system/escape_game.service
+
+[Unit]
+Description=Escape Game Flask App
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/escape-game
+ExecStart=/home/pi/escape-game/venv/bin/gunicorn -w 1 -b 127.0.0.1:5000 escape_game:app
+
+[Install]
+WantedBy=multi-user.target
+
+Activer :
+
+sudo systemctl enable --now escape_game
+
