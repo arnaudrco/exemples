@@ -52,7 +52,7 @@ AudioOutputI2S *out = NULL;
 // Enter your WiFi setup here:
 #ifndef STASSID
 #define STASSID "NUMERICABLE-63"
-#define STAPSK  "camille01"
+#define STAPSK  "xxx"
 #endif
 
 const char* ssid = STASSID;
