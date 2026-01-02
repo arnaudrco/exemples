@@ -18,7 +18,7 @@
 Audio audio;
 
 String ssid =     "NUMERICABLE-63";
-String password = "camille01";
+String password = "xxx";
 
 
 void setup() {
