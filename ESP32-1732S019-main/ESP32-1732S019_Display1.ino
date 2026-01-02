@@ -7,11 +7,11 @@
 
 // prepare WiFi
 const char* ssid = "NUMERICABLE-63";                                                 // Replace with your
-const char* password = "camille01";                                                  // WiFi credentials
+const char* password = "xxx";                                                  // WiFi credentials
 
 // search your next airport here and get the ICAO code
 // https://en.wikipedia.org/wiki/ICAO_airport_code
-const char* metar = "https://aviationweather.gov/api/data/metar?ids=LFPO&format=json";// KDEN = Denver
+const char* metar = "https://aviationweather.gov/api/data/metar?ids=LFPO&format=json";// Orly
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
 int wifiTimeOutCounter = 0;
