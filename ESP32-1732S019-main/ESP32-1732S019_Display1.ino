@@ -15,7 +15,7 @@ const char* metar = "https://aviationweather.gov/api/data/metar?ids=LFPO&format=
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
 int wifiTimeOutCounter = 0;
-#define TIMEOFFSET -3600 * 5  // no daylight saving time
+#define TIMEOFFSET 3600 * 1  // no daylight saving time
 
 // init parameter for universe simulation
 int const n = 5, m = 200;
