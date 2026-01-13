@@ -1,5 +1,5 @@
 // TEST  sur carte S3 Zero, le 1/1/2026 ArnaudRCO
-//
+//  options outils > partition > HUGE APP et SPRAM > QSPI
 // Source :  https://www.xtronical.com/i2sinternetradio/
 // IDE Arduino 1.8.20
 // Core  ESP32 d'Espressif en version 3.1.0  
