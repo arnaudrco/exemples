@@ -1,4 +1,5 @@
 // TEST  sur carte S3 Zero, le 1/1/2026 ArnaudRCO
+// connectez vous à 192.168.4.1 pour rentrer la connexion de votre BOX
 //  options outils > partition > HUGE APP et SPRAM > QSPI
 // SORTIE HP 
 // Source :  https://www.xtronical.com/i2sinternetradio/
