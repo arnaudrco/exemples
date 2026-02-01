@@ -1,4 +1,4 @@
-prototype avec un esp32s3 "zero" ; version HP ; pas de fils
+prototype avec un esp32s3 "zero" ; version HP avec ampli 3 W (Max98357) ; pas de fils
 
 METTRE A JOUR LE CODE WIFI EN SE CONNECTANT ESP32_XXXX adresse 192.168.4.1
 
