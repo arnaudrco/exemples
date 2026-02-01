@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" content="user-scalable=no">
+    <title>FPV Car</title>
+    
+    <style>
+    
+    body{ 
+        position: fixed;
+        touch-action: none;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: 5% 15% 40%;
+    }
+    
+    .imgcontainer {
+        margin-left: 40px;
+    }
+    
+    .title {
+        text-align:center;
+        font-size: xxx-large;
+    }
+    
+    .coords {
+        text-align: center;
+        font-size: xxx-large;
+    }
+        
+    .subcontainer {
+        width: 100%;
+        text-align:center;
+    }
+    
+    .stick {
+        display: inline;
+    }
+        
+    </style>
+</head>
+
+<body>
+    <div class="imgcontainer">
+        <img src="" class="image" id="im" width="800" height="600">
+    </div>
+    <div class="container">
+        <h3 class="title" > FPV Car </h3>
+        <p class="coords" >
+            LS: <span id="x_coordinate">    </span>
+            RS: <span id="y_coordinate">    </span>
+        </p>
+        <div class="subcontainer">
+           <canvas id="joy" class="stick"> </canvas>
+        </div>
+    </div>
+
+    <script>
+        var ws = new WebSocket("ws://" + location.hostname + ":80");
+    
+        //var count = 0;
+    
+        ws.onopen = function () {
+            ws.send("ready\n");
+        };
+    
+        ws.onmessage = function (evt) {
+            //count += 1;
+            var img = document.getElementById("im");
+            img.src = 'data:image/jpeg;base64,' + evt.data;
+            //document.getElementById("im_nb").innerHTML = count;
+            ws.send("ready\n");
+        };
+    
+        ws.onerror = function (evt) {
+            console.log("Error");
+        };
+   
+        var canvas, ctx;
+
+        window.addEventListener('load', () => {
+
+            canvas = document.getElementById('joy');
+            ctx = canvas.getContext('2d');          
+            resize(); 
+
+            /*document.addEventListener('mousedown', startMove);
+            document.addEventListener('mouseup', resetCoords);
+            document.addEventListener('mousemove', Draw);*/
+
+            document.addEventListener('touchstart', startMove);
+            document.addEventListener('touchend', resetCoords);
+            document.addEventListener('touchcancel', resetCoords);
+            document.addEventListener('touchmove', Draw);
+            
+            window.addEventListener('resize', resize);
+
+            document.getElementById("x_coordinate").innerText = 0;
+            document.getElementById("y_coordinate").innerText = 0;
+        });
+
+        var width, height, radius_bkgd, radius_jstk, x_orig, y_orig, ls, rs;
+        
+        let coord = { x: 0, y: 0 };
+        let move  = false;
+        let mess = "";
+
+        const bkgd_color = '#ECE5E5';
+        const jstk_color = '#0000FB';
+        const black      = '#000000'
+        
+        setInterval(send_ws, 200);
+        
+        function send_ws(){
+            if (!move) return;
+            var m = ls + ";" + rs + "\n";
+            if (m != mess) {
+                ws.send(m);
+                mess = m;
+             }
+        }
+        
+        function resize() {
+            width  = window.innerWidth*0.8;
+            height = window.innerHeight*.4;
+            ctx.canvas.width = width;
+            ctx.canvas.height = height;
+            x_orig = width/2;
+            y_orig = height/2;
+            coord.x = x_orig;
+            coord.y = y_orig;
+            //x = 0;
+            //y = 0;
+            ls = 0;
+            rs = 0;
+            radius_bkgd = height*.33;
+            radius_jstk = radius_bkgd/2;
+            draw_bkgd();
+            draw_jstk();
+        }
+
+        function draw_bkgd() {
+            ctx.beginPath();
+            ctx.arc(x_orig, y_orig, radius_bkgd + 20, 0, Math.PI * 2, true);
+            ctx.fillStyle = bkgd_color;
+            ctx.fill();
+            ctx.beginPath();
+            ctx.rect(x_orig - height/2, y_orig - height/2, height, height)
+            ctx.strokeStyle = black;
+            ctx.lineWidth = 4;
+            ctx.stroke();
+        }
+
+        function draw_jstk() {
+            ctx.beginPath();
+            ctx.arc(coord.x, coord.y, radius_jstk, 0, Math.PI * 2, true);
+            ctx.fillStyle = jstk_color;
+            ctx.fill();
+            ctx.strokeStyle = black;
+            ctx.lineWidth = 4;
+            ctx.stroke();
+        }
+
+        function getPosition(event) {
+            var mouse_x = event.clientX || event.touches[0].clientX;
+            var mouse_y = event.clientY || event.touches[0].clientY;
+            coord.x = mouse_x - canvas.offsetLeft;
+            coord.y = mouse_y - canvas.offsetTop;
+            if (Math.abs(coord.x - x_orig) > height/2 - radius_jstk){
+                coord.x = x_orig + Math.sign(coord.x - x_orig)*(height/2 - radius_jstk);
+            }
+            if (Math.abs(coord.y - y_orig) > height/2 - radius_jstk){
+                coord.y = y_orig + Math.sign(coord.y - y_orig)*(height/2 - radius_jstk);
+            }
+            var x = Math.round(100*(coord.x - x_orig)/(height/2 + radius_jstk));   //100 -> rotation speed
+            var y = -Math.round(100*(coord.y - y_orig)/(height/2 + radius_jstk));  //replace 100->199 for full speed
+            x = Math.min(Math.max(x, -20), 20);
+            ls = x + y;  //left motor speed
+            rs = -x + y; //right motor speed
+        }
+
+        function startMove(event) {
+            getPosition(event);
+            var radius = Math.sqrt(Math.pow(coord.x - x_orig, 2) + Math.pow(coord.y - y_orig, 2));
+            if (radius < radius_jstk) move = true;
+        }
+
+        function resetCoords(event) {
+            move = false;
+            coord.x = x_orig;
+            coord.y = y_orig;
+            //x = 0;
+            //y = 0:
+            ls = 0;
+            rs = 0;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            draw_bkgd();
+            draw_jstk();
+            document.getElementById("x_coordinate").innerText = 0;
+            document.getElementById("y_coordinate").innerText = 0;
+            ws.send("0;0\n");
+        }
+
+        function Draw(event) {
+            if (!move) return;
+            getPosition(event);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            draw_bkgd();
+            draw_jstk();
+            
+            //document.getElementById("x_coordinate").innerText = x;
+            //document.getElementById("y_coordinate").innerText = y;
+            document.getElementById("x_coordinate").innerText = ls;
+            document.getElementById("y_coordinate").innerText = rs;
+            
+            //ws.send("m.setSpeed(" + y + ");d.turn(" + x + ")\n");
+        } 
+    </script>
+</body>
+</html>
