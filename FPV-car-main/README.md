@@ -3,11 +3,6 @@ First Person View car
 
 https://github.com/user-attachments/assets/c1b2bee0-59e9-4a63-bc8f-71db247ff93a
 
-# Schema électrique
-
-<p>
-  <img src="./schema electrique.png" width=600>
-</p>
 
 # Installation
 
@@ -19,7 +14,7 @@ https://github.com/user-attachments/assets/c1b2bee0-59e9-4a63-bc8f-71db247ff93a
 
 # Utilisation
 
-Connecter l'ESP32-cam au PC et lancer WifiConnect dans le shell Thonny pour afficher l'adresse IP  de l'ESP32-cam :
+Connecter l'ESP32-S3 au PC et lancer WifiConnect dans le shell Thonny pour afficher l'adresse IP  de l'ESP32-cam :
 
 ```
 >>> from WifiConnect import WifiConnect
