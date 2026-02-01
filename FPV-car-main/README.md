@@ -1,7 +1,10 @@
 # FPV-car
 First Person View car
 
-https://github.com/user-attachments/assets/c1b2bee0-59e9-4a63-bc8f-71db247ff93a
+montage sans soudure
+
+<img width="846" height="380" alt="image" src="https://github.com/user-attachments/assets/7eeaa492-e6cf-4705-b4a5-02f26d603e88" />
+
 
 
 # Installation
