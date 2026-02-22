@@ -1,8 +1,12 @@
-# S3 zero
 
-Tester la mémoire, le fonctionnement audio en mode I2S ? Pas facile de comprendre pourquoi certaines options sont indispensables ; j'ai pris un exemple avec un banc de test webradio avec une sortie sur une prise de type écouteur pour brancher sur un lecteur de CD. 
+# Une web radio simple avec un esp32S2
 
-<img width="492" height="511" alt="image" src="https://github.com/user-attachments/assets/4dd60450-a2f4-4af3-82b3-b6afb220cf8b" />
+La broche SCK doit être mise à 0V (GND ).
 
+<img width="693" height="718" alt="image" src="https://github.com/user-attachments/assets/a1e75963-dccd-4137-8385-eee513524571" />
 
-https://github.com/schreibfaul1/ESP32-audioI2S
+Lire [webradio](https://github.com/arnaudrco/exemples/wiki/Webradio) 
+
+Code à compiler avec les options  outils > partition > HUGE APP et "enable" SPRAM
+
+bibliothèque https://github.com/schreibfaul1/ESP32-audioI2S
