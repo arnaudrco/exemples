@@ -1,6 +1,6 @@
 /*
  * LoRa E220 ARNAUDRCO ajout d'un flash de 10 ms pour chaque reception d'un caractère 
- * 
+ * suppression pullup 
  * Start device or reset to send a message
  * by Renzo Mischianti <https://mischianti.org>
  * https://mischianti.org/category/my-libraries/lora-e220-llcc68-devices/
@@ -8,8 +8,8 @@
  * E220         ----- Wemos D1 mini
  * M0         ----- GND
  * M1         ----- GND
- * TX         ----- PIN D2 (PullUP)
- * RX         ----- PIN D3 (PullUP)
+ * TX         ----- PIN D2 
+ * RX         ----- PIN D3 
  * AUX        ----- Not connected
  * VCC        ----- 3.3v/5v
  * GND        ----- GND
