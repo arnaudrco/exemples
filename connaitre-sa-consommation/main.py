@@ -277,7 +277,7 @@ def connect_wifi():
     if not wlan.isconnected():
         wlan.ifconfig((ESP32_IP, NETMASK, GATEWAY, DNS))
         print("Connexion WiFi avec IP fixe...")
-        wlan.connect("NUMERICABLE-63","camille01")  # <-- ton SSID / mot de passe
+        wlan.connect("NUMERICABLE-63","xxxx")  # <-- ton SSID / mot de passe
         while not wlan.isconnected():
             time.sleep(1)
             print(".", end="")
