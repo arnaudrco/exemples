@@ -41,7 +41,7 @@ void setup() {
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
   display.println("ESP8266 + Tasmota");
-  display.println("Power / Yesterday");
+  display.println("Power / Total");
   display.display();
 
   // WiFi
@@ -98,10 +98,10 @@ void fetchAndDisplay() {
         showError("ENERGY manquant");
       } else {
         float power = energy["Power"] | 0.0;
+        float Total = energy["Total"] | 0.0;
         float yesterday = energy["Yesterday"] | 0.0;
-
-        Serial.printf("Power: %.1f W, Yesterday: %.3f kWh\n", power, yesterday);
-        showData(power, yesterday);
+        Serial.printf("Power: %.1f W, Total: %.3f kWh\n", power, Total);
+        showData(power,Total, yesterday );
       }
     }
   } else {
@@ -111,27 +111,28 @@ void fetchAndDisplay() {
   http.end();
 }
 
-void showData(float power, float yesterday) {
+void showData(float power, float Total,float yesterday ) {
   display.clearDisplay();
   display.setTextSize(1);
   display.setCursor(0,0);
   display.println("Tasmota ENERGY");
 
-  display.setTextSize(2);
+  display.setTextSize(3);
   display.setCursor(0,16);
   display.print("P:");
   display.print(power, 0);
   display.println("W");
 
   display.setTextSize(1);
-  display.setCursor(0,40);
-  display.print("Yesterday:");
+  display.setCursor(0,45);
+  display.print("yesterday:");
   display.print(yesterday, 3);
   display.println(" kWh");
 
   display.setCursor(0,56);
-  display.print("IP:");
-  display.print(tasmota_ip);
+  display.print("Total:");
+  display.print(Total, 3);
+  display.println(" kWh");
 
   display.display();
 }
