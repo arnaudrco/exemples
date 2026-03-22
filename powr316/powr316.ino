@@ -7,7 +7,7 @@
 
 // ------- CONFIG WIFI + TASMOTA -------
 const char* ssid     = "NUMERICABLE-63";
-const char* password = "camille01";
+const char* password = "xxxx";
 const char* tasmota_ip = "192.168.1.174";  // <-- change ici
 
 // ------- OLED -------
