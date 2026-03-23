@@ -1,6 +1,8 @@
 # Affichage OLED
 
-<img width="416" height="419" alt="image" src="https://github.com/user-attachments/assets/4b8a1536-c65c-4043-b23f-732287b0593c" />
+Pour lire la production d'énergie sur la prise connectée ; la prise fournit plein d'information que je peux lire sur un autre contrôleur esp8266 sur un écran OLED : ici 3W en fin de journée
+
+<img width="505" height="498" alt="image" src="https://github.com/user-attachments/assets/4bdf1b58-aa35-46b9-8120-945388ed2827" />
 
 
 ## dialogue avec notre prise
