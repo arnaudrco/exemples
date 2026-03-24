@@ -1,0 +1,65 @@
+Dashboard solaire – Schéma des flux
+      ┌──────────────┐
+      │   ESP32 + WiFi    │
+      │  main.py => run   │
+      └─────────┬────┘
+                │
+   ┌────────────┴─────┐
+   │ Requête toutes les 3s   │
+   │ vers la prise reflashée │
+   └────────────┬─────┘
+                │
+      ┌─────────▼────  ┐
+      │  Données JSON        │
+      │  - Voltage           │
+      │  - Current           │
+      │  - Power             │
+      │  - Apparent/Reactive │
+      │  - Factor            │
+      │  - Energy Today      │
+      │  - Max Power & Heure │
+      └─────────┬───── ┘
+                │
+      ┌─────────▼──────┐
+      │ Serveur HTTP /status │
+      │ et commandes /on/off │
+      └─────────┬──────┘
+                │
+        ┌───────▼────┐
+        │ Navigateur Web  │
+        │ dashboard.html  │
+        └───────┬────┘
+                │
+   ┌────────────▼───── ─┐
+   │ Affichage en temps réel   │
+   │ - Graphe 24h (pas=5 min)  │
+   │ - Puissance live          │
+   │ - Énergie aujourd'hui/hier│
+   │ - Max puissance & pic     │
+   │ - Commandes ON/OFF LED    │
+   └─────────────────── ┘
+Comment ça fonctionne
+
+ESP32 lit les données de la prise toutes les 3 secondes via HTTP.
+
+Met à jour :
+
+Consommation instantanée
+
+Historique 5 min pour graphe
+
+Max puissance du jour + heure locale du pic
+
+Fournit /status au navigateur (JSON).
+
+Dashboard HTML récupère JSON et met à jour :
+
+Graphe 24 h
+
+Valeurs live
+
+Max puissance et heure du pic
+
+Commandes prise et LED
+
+✅ Avantage : tout est local, rapide et indépendant de l’heure d’été/hiver.

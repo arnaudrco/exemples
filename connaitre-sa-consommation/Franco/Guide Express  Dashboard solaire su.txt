@@ -1,0 +1,73 @@
+Guide Express : Dashboard solaire sur ESP32
+1️⃣ Préparer l’ESP32
+
+Connecte ton ESP32 à ton PC.
+
+Installe Thonny ou ampy / rshell / WebREPL pour transférer les fichiers.
+
+Assure-toi que MicroPython est installé sur l’ESP32.
+
+2️⃣ Fichiers à mettre sur l’ESP32
+
+main.py → le code principal que je t’ai donné, avec lecture de la prise, calcul pic solaire et serveur web.
+
+dashboard.html → le fichier HTML complet, avec graphique et affichage des données live.
+
+Transfère-les à la racine de l’ESP32.
+
+3️⃣ Modifier les paramètres réseau
+
+Dans main.py, adapte :
+
+ESP32_IP = "192.168.1.101"   # IP fixe souhaitée pour l'ESP32
+NETMASK   = "255.255.255.0"
+GATEWAY   = "192.168.0.1" pour ne pas avoir d'accès vers l'extérieur
+DNS       = "8.8.8.8"
+
+Et le SSID + mot de passe WiFi :
+
+wlan.connect("TON_SSID","TON_MDP")
+
+=====================================================================
+4️⃣ Configurer la prise
+
+Mets l’IP fixe de ta prise dans main.py :
+
+PRISE_IP = "192.168.1.100"
+
+Vérifie que la prise répond à /cm?cmnd=Status 8 et /cm?cmnd=Power0.
+
+5️⃣ Lancer le dashboard
+
+Branche l’ESP32 sur l’alimentation.
+
+Ouvre la console Thonny → Run main.py.
+
+La console affiche l’IP de l’ESP32 :
+
+✅ ESP32 connectée à l'IP: 192.168.1.101
+🚀 Dashboard: http://192.168.1.101
+
+Ouvre ton navigateur → tape l’IP → ton dashboard apparaît.
+
+6️⃣ Fonctionnalités incluses
+
+Boutons ON/OFF prise et LED (témoin wifi).
+
+Graphe 24 h avec historique 5 min.
+
+Puissance max du jour + heure exacte du pic (heure locale, hiver/été OK).
+
+Relevé de puissance, tension, courant, puissance apparente et réactive.
+
+Historique réinitialisé chaque jour automatiquement.
+
+7️⃣ Astuces
+
+Si l’heure du pic ne change pas, laisse l’ESP32 tourner quelques minutes le temps que max_power_today se mette à jour.
+
+Vérifie que la prise est bien compatible Tasmota et répond aux commandes HTTP.
+
+Tu peux ajuster le nombre de points du graphe en modifiant historique_5min[-72:] (72 × 5 min = 6 h).
+
+💡 Avec ce guide, tu as tout pour lancer ton dashboard solaire fonctionnel et fiable, y compris le pic solaire en heure exacte locale, sans te soucier de l’hiver/été.
