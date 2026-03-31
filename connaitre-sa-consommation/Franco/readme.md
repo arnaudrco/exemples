@@ -1,3 +1,60 @@
+
+# Prise du commerce
+
+Les prises du commerce exigent une application sur smartphone pas vraiment pratique. L'acces par l'interface TUYA des prises connectée est difficile, Franco a réalisé une installation avec OPENBEKEN ; la prise apparait sur le réseau WIFI sur une simple adresse 192.168.1.198
+
+<img width="833" height="434" alt="image" src="https://github.com/user-attachments/assets/740d3e3a-a786-49e2-9277-2c2b2b6ba6dc" />
+
+avec un simple esp32 j'affiche ma production électrique ( 6 W ) et j'ai même un historique de ma production pour l'ensemble de la journée !
+
+<img width="380" height="451" alt="image" src="https://github.com/user-attachments/assets/0ad7a080-8705-4930-a7cb-9bb90b9db6e4" />
+
+
+## accès au logiciel interne
+
+<img width="488" height="498" alt="image" src="https://github.com/user-attachments/assets/d42be438-ffd2-4282-88bf-f00b01b94ed3" />
+
+l'opération est délicate sur les prise récentes 
+
+<img width="784" height="619" alt="image" src="https://github.com/user-attachments/assets/c6225d40-9d33-47e7-84c9-100450219118" />
+
+
+# [Connaître sa consommation](https://github.com/arnaudrco/exemples/wiki/Connaitre-sa-consommation)
+
+Bien connaître sa consommation est une première étape pour mieux consommer. 
+
+## dialogue avec notre prise
+
+la prise est connectée à une adresse : ici 192.168.1.174 ; en tapant sur un navigateur en donnant l'adresse de ma prise connectée
+
+    192.168.1.174/cm?cmnd=STATUS%208
+
+j'obtiens le résultat
+
+<img width="516" height="367" alt="image" src="https://github.com/user-attachments/assets/7a28bc37-7b78-43d2-ae7e-0fda1b0a6751" />
+
+Le code interprète les données "JSON" pour les afficher sur l'écran OLED
+
+{
+  "StatusSNS": {
+    "Time": "2026-03-22T17:05:13",
+    "ENERGY": {
+      "TotalStartTime": "2026-03-21T23:08:15",
+      "Total": 0.355,
+      "Yesterday": 0,
+      "Today": 0.355,
+      "Power": 27,
+      "ApparentPower": 36,
+      "ReactivePower": 24,
+      "Factor": 0.75,
+      "Voltage": 239,
+      "Current": 0.152
+    }
+  }
+}
+
+
+
 # Affichage de la production solaire
 
 <img width="723" height="480" alt="image" src="https://github.com/user-attachments/assets/a83a638f-4d87-4e7b-b679-60b156a332fb" />
