@@ -1,3 +1,5 @@
+# version avec écran OLED connecté sur les broches esp32 ( 32 33 25 26 ) 
+
 import network
 import time
 import uasyncio as asyncio
