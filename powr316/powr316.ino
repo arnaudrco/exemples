@@ -1,3 +1,6 @@
+// version avec recherche automatique de l'adresse IP de la prise OpenBK
+// https://github.com/arnaudrco/exemples/wiki/Connaitre-sa-consommation
+
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
@@ -7,8 +10,11 @@
 
 // ------- CONFIG WIFI + TASMOTA -------
 const char* ssid     = "NUMERICABLE-63";
-const char* password = "xxxx";
-const char* tasmota_ip = "192.168.1.174";  // <-- change ici
+const char* password = "xxx";
+bool flag=0; // 
+// const char* tasmota_ip = "192.168.1.82";  // <-- change ici
+const char* tasmota = "192.168.1.";  // <-- change ici
+int IP=80 ; // 82
 
 // ------- OLED -------
 #define SCREEN_WIDTH 128
@@ -23,6 +29,16 @@ HTTPClient http;
 // Temps entre 2 requêtes (ms)
 unsigned long lastQuery = 0;
 const unsigned long queryInterval = 5000;
+
+void find_ip() {
+
+  while(flag==false){
+    IP++;
+    if (IP > 254) IP = 1; // retour boucle
+    fetchAndDisplay();
+  }
+  
+}
 
 void setup() {
   Serial.begin(115200);
@@ -61,17 +77,18 @@ void setup() {
   display.println("WiFi OK");
   display.display();
   delay(1000);
+  find_ip() ;
 }
 
 void loop() {
   if (millis() - lastQuery > queryInterval && WiFi.status() == WL_CONNECTED) {
     lastQuery = millis();
-    fetchAndDisplay();
-  }
+    fetchAndDisplay();  }
 }
 
+
 void fetchAndDisplay() {
-  String url = String("http://") + tasmota_ip + "/cm?cmnd=STATUS%208";
+  String url = String("http://") + tasmota + String(IP) + "/cm?cmnd=STATUS%208";
   Serial.println("GET: " + url);
 
   http.begin(client, url);
@@ -97,16 +114,18 @@ void fetchAndDisplay() {
       if (energy.isNull()) {
         showError("ENERGY manquant");
       } else {
-        float power = energy["Power"] | 0.0;
-        float Total = energy["Total"] | 0.0;
+        float power = energy["ReactivePower"] | 0.0;
+        float Total = energy["ConsumptionTotal"] | 0.0;//  energy["Tota"] | 0.0;
         float yesterday = energy["Yesterday"] | 0.0;
         Serial.printf("Power: %.1f W, Total: %.3f kWh\n", power, Total);
         showData(power,Total, yesterday );
+        flag = true ; // adresse IP OK
       }
     }
   } else {
     Serial.printf("HTTP error: %d\n", httpCode);
     showError("HTTP error");
+   flag = false ;
   }
   http.end();
 }
