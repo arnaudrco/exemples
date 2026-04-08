@@ -1,5 +1,5 @@
 /*
- * LoRa E220 ARNAUDRCO ajout d'un flash de 10 ms pour chaque reception d'un caractère 
+ * LoRa E220 ARNAUDRCO balise qui émet toutes les 2 secondes 
  * 
  * Start device or reset to send a message
  * by Renzo Mischianti <https://mischianti.org>
