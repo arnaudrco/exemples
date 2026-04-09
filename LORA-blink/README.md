@@ -11,4 +11,15 @@ https://mischianti.org/ebyte-lora-e220-llcc68-device-for-arduino-esp32-or-esp826
 
 https://github.com/arnaudrco/exemples/wiki/LORA
 
+## version avec balise
+
+envoie un message
+
+## version avec écran
+
+ I2C OLED sur D6 (SDA) / D5 (SCL)
+
+<img width="385" height="509" alt="image" src="https://github.com/user-attachments/assets/7c8755ad-63e5-445e-a0d3-07d9a0d07bb8" />
+
+
 
