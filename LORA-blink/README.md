@@ -21,5 +21,8 @@ envoie un message
 
 <img width="385" height="509" alt="image" src="https://github.com/user-attachments/assets/7c8755ad-63e5-445e-a0d3-07d9a0d07bb8" />
 
+## version avec écran en réduisant le nombre de fils
+
+<img width="564" height="680" alt="image" src="https://github.com/user-attachments/assets/27eb234a-cfa8-44e8-b6f2-c03dced6c77d" />
 
 
