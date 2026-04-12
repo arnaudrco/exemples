@@ -111,7 +111,11 @@ Pilotage des leds :
 
 Prototype avec un Arduino micro:
 
+<img width="533" height="372" alt="image" src="https://github.com/user-attachments/assets/ae7d4825-4b18-48e3-b7ee-d0225135feaf" />
+
 Cablage du module :
+
+<img width="576" height="417" alt="image" src="https://github.com/user-attachments/assets/b95d35ed-6ec5-42ae-95c1-856cd0532b80" />
 
 Signaux  programmés:
 
@@ -121,6 +125,7 @@ Le programme Arduino allume chaque led par une instruction indiquent sa position
 pixels.setPixelColor(ipixel, pixels.Color(lumRed, lumGreen, lumBlue));
 
 
+<img width="433" height="718" alt="image" src="https://github.com/user-attachments/assets/ebae7568-a921-473f-acf6-a93d5f82b26c" />
 
 Montage du prototype :
 
@@ -129,16 +134,17 @@ Le matériau est le plastique PLA. Le 3 premières couches (3 x 0.2mm) sont en b
 Un joint entre le couvercle et le boîtier est imprimé en plastique souple TPU rouge.
 De même un joint annulaire en TPU est mis sur l’interrupteur.
 
-
-
-
-      
-
-Une attache annulaire de feu arrière est adaptée au boîtier pour la fixation au vélo. Le boîtier est orientable.
-Essais du prototype
+<img width="601" height="629" alt="image" src="https://github.com/user-attachments/assets/7cc6681d-50d6-4ac0-a640-1d6289a5369b" />
    
+Une attache annulaire de feu arrière est adaptée au boîtier pour la fixation au vélo. Le boîtier est orientable.
 
+<img width="316" height="304" alt="image" src="https://github.com/user-attachments/assets/200f5281-3415-4c33-8ab0-55926cbdce06" />
 
+Essais du prototype
+
+<img width="331" height="443" alt="image" src="https://github.com/user-attachments/assets/a6998749-1449-45f9-9dbb-fb0c3fb1fadc" />
+
+   
 
 Tests de consommation
 La consommation est mesurée avec un ampèremètre au niveau de l’alimentation.
@@ -149,6 +155,8 @@ La consommation est mesurée avec un ampèremètre au niveau de l’alimentation
 L’alimentation est assurée par 4 Piles AA 1.5V en série. Chaque pile a une capacité de 2500 à 3000 mAh. En mode normal de fonctionnement, cela assure environ 20h d’autonomie
 
 Prototype 2
+
+<img width="312" height="350" alt="image" src="https://github.com/user-attachments/assets/56ad24e4-3181-49c4-a9f8-083e4c8fe774" />
 
 Par rapport au proto 1, les améliorations sont :
     • Attache au vélo plus solide. La première a lâché très rapidement.
