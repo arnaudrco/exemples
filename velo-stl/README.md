@@ -7,6 +7,8 @@ Ce projet vise à renforcer la sécurité des cyclistes par un éclairage averti
 L’idée est de créer un signal lumineux qui avertit l’automobiliste qu’il est trop proche et donc dangereux pour le cycliste.
 On retrouve les distances caractéristiques ici :
 
+<img width="648" height="669" alt="image" src="https://github.com/user-attachments/assets/231127f8-02a4-4ee2-b71f-96fc94ffb9ad" />
+
 Le projet se fonde sur l’utilisation d’un microcontrôleur Arduino, associé à un télémètre laser et un panneau de leds. L’ensemble sera intégré dans un boitier étanche et fixé au vélo.
 
 Cahier des charges :
@@ -22,6 +24,8 @@ Cahier des charges :
     • Fixée à la tige de selle ou au guidon
     • Commandable du guidon (coupure en cas d’embouteillages)
     • Moins de 15€ de coût de composants (BOM)
+    
+<img width="1036" height="511" alt="image" src="https://github.com/user-attachments/assets/f2567082-5eca-4bb5-8d39-fef0fdd04a17" />
 
 
 Choix de composants
