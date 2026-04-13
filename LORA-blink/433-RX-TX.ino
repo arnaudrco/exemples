@@ -1,14 +1,12 @@
 // ArnaudRCO https://github.com/arnaudrco/exemples/wiki/LORA-pour-les-pros
 // avec un petit affichage ; montage sur LORA-02 (LX1262) très économique en 433 MHz
-
 #include <SPI.h>
 #include <LoRa.h>
 
-// #define NSS 15
-#define NSS D0
-// #define RST 4
-#define RST D8
-#define DIO0 5
+
+#define NSS D0 //
+#define RST D8 //
+#define DIO0 D1 // 5
 
 
 // ------- OLED -------
@@ -18,7 +16,7 @@
 #define SCREEN_HEIGHT 64
 #define OLED_RESET   -1
 #define PLUS   D4
-#define LIGNES   5 // nombre de lignes  sur écran
+#define LIGNES   100 // nombre approximatifs de characteres  sur écran
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 int ligne ; // lignes pleines
 
@@ -53,7 +51,7 @@ void setup() {
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0,0);
   display.println("LORA");
-  display.println("433MHz");
+  display.print("433MHz ");
   display.display();
   
   LoRa.setPins(NSS, RST, DIO0);
@@ -68,7 +66,7 @@ LoRa.setSignalBandwidth(125E3); // 125kHz
   }
     Serial.println("");
   Serial.println("LoRa RÉCEPTEUR prêt");
-       display.println("Balise LoRa");
+       display.println("Balise OK");
   display.display();
   
   String message = "Arnaud";
@@ -84,20 +82,20 @@ void loop() {
   if (packetSize) {
     Serial.print("Reçu: ");
     while (LoRa.available()) {
+      if(ligne++ > LIGNES){
+    display.clearDisplay();
+      display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0,0);
+  ligne = 0;
+  }
       Serial.print(c=LoRa.read());
        display.print(c);
   display.display();
     }
     Serial.println();
-    if(ligne++ > LIGNES ){ // LIGNES MAX
-    display.clearDisplay();
-      display.setTextSize(1);
-  display.setTextColor(SSD1306_WHITE);
-  display.setCursor(0,0);
 
-  ligne = 0;
- }
-      display.println("");
+      display.print(" "); ligne++;
       display.display();
   }
 
