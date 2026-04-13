@@ -25,4 +25,11 @@ envoie un message
 
 <img width="564" height="680" alt="image" src="https://github.com/user-attachments/assets/27eb234a-cfa8-44e8-b6f2-c03dced6c77d" />
 
+# version LORA "433"
+
+433-RX-TX.ino avec un petit affichage ; montage sur LORA-02 (LX1262) très économique en 433 MHz ; recoie et envoie un message avec un compteur
+
+<img width="382" height="401" alt="image" src="https://github.com/user-attachments/assets/57ee3a91-1042-48a0-9ac6-6d9c5f48e12d" />
+
+
 
