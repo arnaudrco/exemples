@@ -1,3 +1,6 @@
+// ArnaudRCO https://github.com/arnaudrco/exemples/wiki/LORA-pour-les-pros
+// avec un petit affichage ; montage sur LORA-02 (LX1262) très économique en 433 MHz
+
 #include <SPI.h>
 #include <LoRa.h>
 
