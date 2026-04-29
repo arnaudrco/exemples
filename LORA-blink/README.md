@@ -33,7 +33,7 @@ envoie un message
 
 # version LORA "433" et qualité de transmission 
 
-avec un affichage en dB de la transmission
+433-RX-TX-RSSI-1367.ino avec un affichage en dB de la transmission
 
 <img width="1093" height="602" alt="image" src="https://github.com/user-attachments/assets/24184d48-af61-4a7d-a519-2c7024a38f55" />
 
