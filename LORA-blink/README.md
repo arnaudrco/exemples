@@ -37,6 +37,14 @@ envoie un message
 
 <img width="1093" height="602" alt="image" src="https://github.com/user-attachments/assets/24184d48-af61-4a7d-a519-2c7024a38f55" />
 
+# version LORA 868 MHz
+
+Pas facile d'utiliser les anciens modules sx1262 ; j'ai pris un montage qui affiche le RSSI
+
+<img width="909" height="655" alt="image" src="https://github.com/user-attachments/assets/2ecc8fe7-0e8e-41c1-b1d3-06a71bc5ffcd" />
+
+LORA-blink/1262-spi.ino
+
 
 
 
