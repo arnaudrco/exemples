@@ -1,14 +1,10 @@
-# esp8266
+# MESHSTATIC avec nrf52840 
+
+<img width="603" height="541" alt="image" src="https://github.com/user-attachments/assets/eb3cd7fb-c828-4f93-9209-3abad572d45d" />
 
 
-## une réalisation facile
+Le circuit ne répond pas ; pour accéder au port USB nrf52840 mettre à zero la broche RESET rapidement
 
-Bip bip ! en utisant 2 modules LORA et 2 vieux esp8266, voici de quoi s'amuser !
+<img width="474" height="357" alt="image" src="https://github.com/user-attachments/assets/e0389a3a-c406-4a2b-8927-4bfd9ac970b2" />
 
-<img width="723" height="467" alt="image" src="https://github.com/user-attachments/assets/7981e280-12c1-4ab1-8bf8-82691d04da21" />
-
-https://mischianti.org/ebyte-lora-e220-llcc68-device-for-arduino-esp32-or-esp8266-specs-and-basic-use-1/#esp32-sketch_1
-
-https://github.com/arnaudrco/exemples/wiki/LORA
-
-
+dans le répertoire, pour mettre à jour le boot, copier .HEX puis .UF2 
