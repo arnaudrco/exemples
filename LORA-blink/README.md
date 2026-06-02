@@ -51,6 +51,21 @@ afficher la qualité de transmission
 
 https://github.com/arnaudrco/CROUS-micro-python/blob/main/LORA/README.md
 
+# écran faible consommation
 
+Pas facile de rtouver le bon pilote
+
+<img width="391" height="445" alt="image" src="https://github.com/user-attachments/assets/67cf106a-e30b-4365-a0bc-b5d234f64ae2" />
+
+Petite police
+
+    u8g2.setFont(u8g2_font_6x10_tf);
+
+Pour avoir des grandes polices
+
+- u8g2_font_fub30_tf (30 pixels de haut)
+- u8g2_font_fub20_tf (20 pixels)
+- u8g2_font_fub25_tf (25 pixels)
+- u8g2_font_logu30_tf (30 pixels, chiffres)
 
 
