@@ -45,6 +45,12 @@ Pas facile d'utiliser les anciens modules sx1262 ; j'ai pris un montage qui affi
 
 LORA-blink/1262-spi.ino
 
+# version RSSI
+
+afficher la qualité de transmission 
+
+https://github.com/arnaudrco/CROUS-micro-python/blob/main/LORA/README.md
+
 
 
 
