@@ -1,3 +1,4 @@
+# script en python à xecuter sur Thonny en local avec interface graphique minimale 
 
 import serial
 import time
