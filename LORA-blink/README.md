@@ -67,5 +67,9 @@ Pour avoir des grandes polices
 - u8g2_font_fub20_tf (20 pixels)
 - u8g2_font_fub25_tf (25 pixels)
 - u8g2_font_logu30_tf (30 pixels, chiffres)
+- 
+# BALISE avec affichage 126x64 en spi avec RA02 en mode spi
 
+cela fait beaucoup de fils ; j'économise les connexions en utilisant les mêmes fils pour commander afficheur et LORA 
 
+12864-spi-433.ino
