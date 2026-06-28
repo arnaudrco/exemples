@@ -1,3 +1,7 @@
+lire aussi des applications avancées microphone 
+
+https://github.com/arnaudrco/CROUS-micro-python/tree/main/NRF52840
+
 # MESHSTATIC avec nrf52840 
 
 <img width="603" height="541" alt="image" src="https://github.com/user-attachments/assets/eb3cd7fb-c828-4f93-9209-3abad572d45d" />
