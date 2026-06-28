@@ -1,4 +1,4 @@
-lire aussi des applications avancées microphone 
+lire aussi des applications microphone 
 
 https://github.com/arnaudrco/CROUS-micro-python/tree/main/NRF52840
 
