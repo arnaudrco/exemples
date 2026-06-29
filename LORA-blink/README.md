@@ -45,12 +45,6 @@ Pas facile d'utiliser les anciens modules sx1262 ; j'ai pris un montage qui affi
 
 LORA-blink/1262-spi.ino
 
-# version RSSI
-
-afficher la qualité de transmission 
-
-https://github.com/arnaudrco/CROUS-micro-python/blob/main/LORA/README.md
-
 # écran faible consommation
 
 Pas facile de rtouver le bon pilote
@@ -73,3 +67,10 @@ Pour avoir des grandes polices
 cela fait beaucoup de fils ; j'économise les connexions en utilisant les mêmes fils pour commander afficheur et LORA 
 
 12864-spi-433.ino
+
+# CROUS
+
+Pour avoir d'autres réalisations avancées pour afficher la qualité de transmission :
+
+https://github.com/arnaudrco/CROUS-micro-python/blob/main/LORA/README.md
+
