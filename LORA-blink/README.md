@@ -1,3 +1,10 @@
+
+# balise connectée pour pression, humidité et température
+
+main.py
+
+source https://github.com/targetblank/micropython_ahtx0
+
 # esp8266
 
 
