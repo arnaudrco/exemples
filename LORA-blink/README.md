@@ -1,18 +1,5 @@
 
-# balise connectée pour pression, humidité et température
 
-main.py , ahtx0.py et bmp280.py
-
-l'ancienne version en bas avec ecran nokia 5110 et la nouvelle avec LORA
-
-<img width="394" height="428" alt="image" src="https://github.com/user-attachments/assets/51cf2f68-a006-44a9-9a29-6ab38f3f46eb" />
-
-Bibliothèque : téléchargez ahtx0.py et placez-la dans lib/ sur l'ESP32-C3 (ou à la racine). 
-Adresse I2C : 0x38 (fixe, pas de broche d'adresse comme le BMP280).
-Alimentation : VCC → 3V3, GND → GND, SDA → GPIO 8, SCL → GPIO 9.
-Temps de réponse : le capteur met ~80 ms par mesure ; évitez de lire plus vite que toutes les 2 s pour des résultats stables.
-
-source https://github.com/targetblank/micropython_ahtx0
 
 # esp8266
 
@@ -84,9 +71,26 @@ cela fait beaucoup de fils ; j'économise les connexions en utilisant les mêmes
 
 12864-spi-433.ino
 
+
 # CROUS
 
 Pour avoir d'autres réalisations avancées pour afficher la qualité de transmission :
 
 https://github.com/arnaudrco/CROUS-micro-python/blob/main/LORA/README.md
+
+
+# balise connectée pour pression, humidité et température
+
+main.py , ahtx0.py et bmp280.py
+
+l'ancienne version en bas avec ecran nokia 5110 et la nouvelle avec LORA
+
+<img width="394" height="428" alt="image" src="https://github.com/user-attachments/assets/51cf2f68-a006-44a9-9a29-6ab38f3f46eb" />
+
+Bibliothèque : téléchargez ahtx0.py et placez-la dans lib/ sur l'ESP32-C3 (ou à la racine). 
+Adresse I2C : 0x38 (fixe, pas de broche d'adresse comme le BMP280).
+Alimentation : VCC → 3V3, GND → GND, SDA → GPIO 8, SCL → GPIO 9.
+Temps de réponse : le capteur met ~80 ms par mesure ; évitez de lire plus vite que toutes les 2 s pour des résultats stables.
+
+source https://github.com/targetblank/micropython_ahtx0
 
