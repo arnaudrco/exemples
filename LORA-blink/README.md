@@ -81,6 +81,10 @@ https://github.com/arnaudrco/CROUS-micro-python/blob/main/LORA/README.md
 
 # balise connectée pour pression, humidité et température
 
+J'ai repris le montage CROUS en utilisant UART1 pour ESP32-C3 : TX=GPIO21, RX=GPIO20 par défaut
+E220-900T : TX module -> RX ESP32, RX module -> TX ESP32
+uart = UART(1, baudrate=9600, tx=21, rx=20)
+
 main.py , ahtx0.py et bmp280.py
 
 l'ancienne version en bas avec ecran nokia 5110 et la nouvelle avec LORA
