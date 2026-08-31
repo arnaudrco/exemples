@@ -30,5 +30,9 @@ while True:
     time.sleep(1)
     led.value(0)
     uart.write('Bonjour\n')
+    uart.write(f"T: {sensor.temperature:.1f} °C")
+    uart.write(f"P: {bmp.pressure:.1f} Pa")
+    uart.write(f"H: {sensor.relative_humidity:.1f} %")
+
     time.sleep(1)
     led.value(1)
