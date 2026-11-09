@@ -26,7 +26,8 @@ Adafruit_NeoPixel pixels(1, PIN, NEO_GRB + NEO_KHZ800);
 // Rotary Encoder Pins
 #define ENCODER_CLK 7
 #define ENCODER_DT  8
-#define ENCODER_SW  9
+#define GND  9
+#define ENCODER_SW  10
 
 Audio audio;
 int currentStation = 0;
@@ -77,8 +78,8 @@ void readRotaryEncoder() {
     if (clkState == LOW) {
       // Make sure button is NOT pressed during rotation
       if (digitalRead(ENCODER_SW) == HIGH) {
-        
-        if (dtState == clkState) {
+        // if (dtState == clkState) 
+        if (dtState != clkState) {
           // Clockwise - Volume UP
           if (currentVolume < 21) {
             currentVolume++;
@@ -114,6 +115,16 @@ void readButton() {
     if (millis() - buttonDebounceTime > buttonDebounceDelay) {
       // Switch station
       currentStation = (currentStation + 1) % numStations;
+      
+audio.stopSong();
+  delay(300);
+// audio.connecttohost("http://icecast.radiofrance.fr/franceinfo-midfi.mp3");
+ audio.connecttohost("https://stream.radiofrance.fr/franceinter/franceinter.m3u8");
+     // audio.connecttohost("http://tsfjazz.ice.infomaniak.ch/tsfjazz-high.mp3");
+   pixels.setPixelColor(0, pixels.Color(150, 150, 150)); // blanc
+    pixels.show();   // Send the updated pixel colors to the hardware.   
+  
+      
       Serial.printf("\nSwitching to: %s\n", stationNames[currentStation]);
       
 //      showLoadingStation();
@@ -160,7 +171,7 @@ void playStation(int index) {
 // ═══════════════════════════════════════════════════════════════════════
 // AUDIO CALLBACK FUNCTIONS
 // ═══════════════════════════════════════════════════════════════════════
-
+/*
 void audio_info(const char *info) {
   Serial.print("Info: ");
   Serial.println(info);
@@ -187,7 +198,7 @@ void audio_eof_stream(const char *info) {
   delay(1000);
   playStation(currentStation);
 }
-
+*/
 // ----------------- WIFI -----------------
 //gets called when WiFiManager enters configuration mode
 void configModeCallback (WiFiManager *myWiFiManager) {
@@ -217,7 +228,9 @@ void connectWifi() {
 
 
 void setup() {
-
+  
+ pinMode(GND, OUTPUT); // board prise GND
+ digitalWrite(GND, LOW);
   
   // ─────────────────────────────────────────────────────────────────────
   // STEP 1: Setup Rotary Encoder
@@ -245,8 +258,9 @@ void setup() {
   
   audio.setPinout(I2S_BCLK, I2S_LRC, I2S_DOUT);
   audio.setVolume(6); // 0...21
-
+  audio.setConnectionTimeout(2000, 3000);
   audio.connecttohost("https://icecast.radiofrance.fr/monpetitfranceinter-midfi.aac");
+// audio.connecttohost("http://icecast.radiofrance.fr/franceinfo-midfi.mp3");
 
   //audio.connecttohost("http://icecast.radiofrance.fr/fipjazz-midfi.mp3");
   //audio.connecttohost("http://icecast.radiofrance.fr/fipworld-midfi.mp3");
@@ -261,5 +275,11 @@ void loop()
   audio.loop();
     // Read encoder every iteration for fastest response
   readRotaryEncoder();
-  
+   
+  // Read button every 10ms
+  static unsigned long lastButtonRead = 0;
+  if (millis() - lastButtonRead > 10) {
+    readButton();
+    lastButtonRead = millis();
+  }
 }
